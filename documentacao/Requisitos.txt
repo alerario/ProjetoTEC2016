@@ -27,6 +27,11 @@ R005 - Feedback
 	Responsável pela sua criação: Arthur Navarro Miksza
 	Pacote UML - Ainda não foi feito.
 
+R009 - Indicação
+	O sistema deve disponibilizar uma forma que o cliente possa pedir indicação para outros clientes para determinado serviço. O cliente especifica o serviço que deseja e outros clientes podem sugerir empresas/ prestadores de serviços que já conheçam.
+	Responsável pela sua criação: Rafael Wilson Dantas da Silva
+	Pacote UML - Ainda não foi feito.
+
 R011  - Integração Google Agenda
 	Este requisito tem como objetivo exportar os dados referente a agendamento de serviços, para o sistema de calendários ddo Google (Calendar).
        Responsável pela sua criação: Diego Pereira do Nascimento
@@ -37,6 +42,10 @@ R013 - Orçamento (usar um formulário = orcamento)
 	   Funções: Deve existir um campo no form para selecionar o prestador a quem se deseja ter contato, um campo para se escrever todo o conteudo desejado, e por ultimo campos para informações de contato do solicitante.
        Responsável pela sua criação: Leonardo Santos Martins
        Pacote UML - Ainda não foi feito
+R016 - Serviços da empresa e preços dentro da plataforma.
+	Ao escolher a empresa/serviço, o cliente deve ser direcionado p/ a página da empresa que fica alocada dentro da plataforma, nesta página há uma lista de serviços que a empresa realiza, assim como uma lista de preços referentes aos serviços listados.
+	Responsável pela sua criação : Jéssica Tiemi Yamada Terada
+	Pacote UML - Ainda não foi feito.
 
 R017  - Relatório de compras
 	Este requisito tem como objetivo de realizar relatório das últimas compras (ultimas, por intervalo de data).

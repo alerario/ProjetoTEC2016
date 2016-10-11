@@ -11,7 +11,10 @@ R000 - crud_teste (deve ser criado um pacote na doc uml com o mesmo nome)
         Responsável pela sua criação: Alexandre L'Erario 
         Este texto deve ser preenchido na descrição do pacote (UML)
         
-R001 -   
+R001 -   Manter Serviço(CRUD)
+	Requesito que permite o cadastro/modificação/pesquisa/exclusão dos serviços que cada prestador de serviço irá oferecer na plataforma.
+	Responsável pela sua criação: Anderson Rodrigo Cassiano dos Santos
+	Pacote UML - Ainda não foi feito.
 
 R004 - Opções de pesquisa e formas de apresentação dos resultados
 

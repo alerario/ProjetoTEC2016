@@ -11,7 +11,13 @@ R000 - crud_teste (deve ser criado um pacote na doc uml com o mesmo nome)
         Responsável pela sua criação: Alexandre L'Erario 
         Este texto deve ser preenchido na descrição do pacote (UML)
         
-R001 -     
+R001 -   
+
+R004 - Opções de pesquisa e formas de apresentação dos resultados
+
+	Um um campo p/ a pesquisa,neste campo podem ser pesquisados;nome da empresa desejada,tipo de serviço desejado, o CNPJ da 		empresa.O resultado da pesquisa deve ser uma lista,nesta lista deve aparecer o nome da empresa,CNPJ,uma pequena lista de 		serviços oferecidos e uma foto(opcional) 
+	Responsável pela sua criação: Luis Renato Gazolla
+	Pacote UML - Ainda não foi feito.
 
 R005 - Feedback
 	O objetivo desse requisito é de receber feedbacks por parte do usuário perante ao serviço solicitado pelo mesmo.

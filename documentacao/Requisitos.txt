@@ -13,6 +13,10 @@ R000 - crud_teste (deve ser criado um pacote na doc uml com o mesmo nome)
         
 R001 -     
 
+R005 - Feedback
+	O objetivo desse requisito é de receber feedbacks por parte do usuário perante ao serviço solicitado pelo mesmo.
+	Responsável pela sua criação: Arthur Navarro Miksza
+	Pacote UML - Ainda não foi feito.
 
 R011  - Integração Google Agenda
 	Este requisito tem como objetivo exportar os dados referente a agendamento de serviços, para o sistema de calendários ddo Google (Calendar).

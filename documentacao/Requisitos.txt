@@ -15,6 +15,17 @@ R001 - Manter Serviço(CRUD)
 	Requesito que permite o cadastro/modificação/pesquisa/exclusão dos serviços que cada prestador de serviço irá oferecer na plataforma.
 	Responsável pela sua criação: Anderson Rodrigo Cassiano dos Santos
 	Pacote UML - Ainda não foi feito.
+	
+R001 - Manter Clientes(CRUD)
+	Requesito que permite o cadastro/modificação/pesquisa/exclusão dos serviços que cada prestador de serviço irá oferecer na plataforma.
+	Responsável pela sua criação: Anderson Rodrigo Cassiano dos Santos
+	Pacote UML - Ainda não foi feito.
+	
+R002 -   Manter Clientes(CRUD)
+	Requesito que permite o inserção, edição, exclusão e pesquisa dos clientes.
+	Responsável pela sua criação: Ítalo A. De Pieri Ventura
+	Pacote UML - Ainda não foi feito.
+Fim da conversa no bate-papo
 
 R002 - Nota Fiscal Eletrônica
 	O sistema deve permitir que o cliente emita uma nota fiscal relacionada ao serviço que o mesmo solicitou para o prestador. Contendo as informações do serviço, data, preço, etc.
@@ -64,5 +75,8 @@ R017 - Relatório de compras
        Responsável pela sua criação: Lucas Fredegoto Reinaldi
        Pacote UML - Ainda não foi feito
        
-       
-       
+R020  - Suporte ao cliente
+	Este requisito tem como objetivo fornecer um chat para suporte ao cliente. Por meio dele, os usuários poderão esclarecer dúvidas e receber sugestões.
+       Responsável pela sua criação: Valéria Banachi Barreto
+       Pacote UML - Ainda não foi feito
+Fim da conversa no bate-papo

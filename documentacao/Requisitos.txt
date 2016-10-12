@@ -32,6 +32,10 @@ R002 - Nota Fiscal Eletrônica
 	Responsável pela sua criação: Augusto Henrique Salla Rosa
 	Pacote UML - Ainda não foi feito.
 
+R004 - Verficar e validar a forma de pagamento
+	O sistema deve ser capaz de verificar e validar o pagamento do usuário referente ao serviço contratado
+	Responsável pela criação: Evelyn Lima
+	UML - Ainda não feito
 
 R004 - Opções de pesquisa e formas de apresentação dos resultados
 

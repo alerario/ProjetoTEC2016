@@ -63,6 +63,10 @@ R011 - Integração Google Agenda
        Responsável pela sua criação: Diego Pereira do Nascimento
        Pacote UML - Ainda não foi feito
 
+R011 - Requisito de Cadastro, alteração e remoção de um Prestador de Serviços (Pessoa física, jurídica)
+       Responsável pela sua criação: Matheus Sadao yamaguchi
+       Pacote UML - Ainda não foi feito
+       
 R013 - Orçamento (usar um formulário = orcamento)
        Este requisito tem por objetivo permitir que os usuários do aplicaivo, possam realizar um orçamento de forma prévia, com informações contantes no perfil dos prestadores, ou até mesmo, solicitar um orçamento especificando materiais, quantidades e coisas assim, tudo o que envolvem este "contrato" de serviço.
 	   Funções: Deve existir um campo no form para selecionar o prestador a quem se deseja ter contato, um campo para se escrever todo o conteudo desejado, e por ultimo campos para informações de contato do solicitante.

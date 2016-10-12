@@ -37,16 +37,16 @@ R004 - Verficar e validar a forma de pagamento
 	Responsável pela criação: Evelyn Lima
 	UML - Ainda não feito
 
-R004 - Opções de pesquisa e formas de apresentação dos resultados
-
-	Um um campo p/ a pesquisa,neste campo podem ser pesquisados;nome da empresa desejada,tipo de serviço desejado, o CNPJ da 		empresa.O resultado da pesquisa deve ser uma lista,nesta lista deve aparecer o nome da empresa,CNPJ,uma pequena lista de 		serviços oferecidos e uma foto(opcional) 
-	Responsável pela sua criação: Luis Renato Gazolla
-	Pacote UML - Ainda não foi feito.
-
 R005 - Feedback
 	O objetivo desse requisito é de receber feedbacks por parte do usuário perante ao serviço solicitado pelo mesmo.
 	Responsável pela sua criação: Arthur Navarro Miksza
 	Pacote UML - Ainda não foi feito.
+	
+R006 -  Opções de pesquisa e formas de apresentação dos resultados
+
+	Um um campo p/ a pesquisa,neste campo podem ser pesquisados;nome da empresa desejada,tipo de serviço desejado, o CNPJ da 		empresa.O resultado da pesquisa deve ser uma lista,nesta lista deve aparecer o nome da empresa,CNPJ,uma pequena lista de 		serviços oferecidos e uma foto(opcional) 
+	Responsável pela sua criação: Luis Renato Gazolla
+	Pacote UML - Ainda não foi feito	
 
 R007 - Agendar Serviço
 	O sistema deve disponibilizar os dias disponíveis para cada serviço prestado, e caso algum seja escolhido deixar dia ocupado.

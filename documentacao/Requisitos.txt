@@ -58,6 +58,11 @@ R009 - Indicação
 	Responsável pela sua criação: Rafael Wilson Dantas da Silva
 	Pacote UML - Ainda não foi feito.
 
+R010 - Google Analytics 
+	Sistema deve fazer a integração com o Google Analytics com objetivo de identificar os principais dados dos usuários.
+       Responsável pela sua criação: Silvia Ramalho da Silva
+       Pacote UML - Ainda não foi feito
+
 R011 - Integração Google Agenda
 	Este requisito tem como objetivo exportar os dados referente a agendamento de serviços, para o sistema de calendários ddo Google (Calendar).
        Responsável pela sua criação: Diego Pereira do Nascimento

@@ -63,7 +63,7 @@ R011 - Integração Google Agenda
        Responsável pela sua criação: Diego Pereira do Nascimento
        Pacote UML - Ainda não foi feito
 
-R011 - Requisito de Cadastro, alteração e remoção de um Prestador de Serviços (Pessoa física, jurídica)
+R012 - Requisito de Cadastro, alteração e remoção de um Prestador de Serviços (Pessoa física, jurídica)
        Responsável pela sua criação: Matheus Sadao yamaguchi
        Pacote UML - Ainda não foi feito
        

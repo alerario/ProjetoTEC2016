@@ -45,7 +45,9 @@ R007 - agendar_serviço
 	Responsável pela sua criação: Matheus Antonio Anastácio da Silva
 	Pacote UML - Ainda não foi feito.
 
-R008 - ???
+R008 - negociacao
+	O sistema deve permitir ao usuário realizar a negociação de preço através de uma tela separada, onde fornecedor e cliente entrarão em consenso
+	Responsável pela sua criação:FELIPPE GEORGE HAEITMANN
 
 R009 - indicação
 	O sistema deve disponibilizar uma forma que o cliente possa pedir indicação para outros clientes para determinado serviço. O cliente especifica o serviço que deseja e outros clientes podem sugerir empresas/ prestadores de serviços que já conheçam.

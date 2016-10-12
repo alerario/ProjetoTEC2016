@@ -11,95 +11,98 @@ R000 - crud_teste (deve ser criado um pacote na doc uml com o mesmo nome)
         Responsável pela sua criação: Alexandre L'Erario 
         Este texto deve ser preenchido na descrição do pacote (UML)
         
-R001 - Manter Serviço(CRUD)
+R001 - crud_servico 
 	Requesito que permite o cadastro/modificação/pesquisa/exclusão dos serviços que cada prestador de serviço irá oferecer na plataforma.
 	Responsável pela sua criação: Anderson Rodrigo Cassiano dos Santos
 	Pacote UML - Ainda não foi feito.
-	
-R001 - Manter Clientes(CRUD)
-	Requesito que permite o cadastro/modificação/pesquisa/exclusão dos serviços que cada prestador de serviço irá oferecer na plataforma.
-	Responsável pela sua criação: Anderson Rodrigo Cassiano dos Santos
-	Pacote UML - Ainda não foi feito.
-	
-R002 -   Manter Clientes(CRUD)
+		
+R002 -  crud_cliente
 	Requesito que permite o inserção, edição, exclusão e pesquisa dos clientes.
 	Responsável pela sua criação: Ítalo A. De Pieri Ventura
 	Pacote UML - Ainda não foi feito.
-Fim da conversa no bate-papo
 
-R002 - Nota Fiscal Eletrônica
-	O sistema deve permitir que o cliente emita uma nota fiscal relacionada ao serviço que o mesmo solicitou para o prestador. Contendo as informações do serviço, data, preço, etc.
-	Responsável pela sua criação: Augusto Henrique Salla Rosa
-	Pacote UML - Ainda não foi feito.
+R003 - procura_prestador
+	Encontrar prestador de serviço mais próximo: Por meio de uso de serviço de localização de usuário deverá ser possível localizar um prestador de serviço mais próximo do usuário. Deverá ser possível procurar por: melhor avaliação, pior avaliação, mais visualizados, mais comentados, maior preço médio, menor preço médio e por tipo.
+	Responsável pela criação: Ricardo Alvim	
 
-R004 - Verficar e validar a forma de pagamento
-	O sistema deve ser capaz de verificar e validar o pagamento do usuário referente ao serviço contratado
+R004 - forma_pagamento
+	Verficar e validar a forma de pagamento. O sistema deve ser capaz de verificar e validar o pagamento do usuário referente ao serviço contratado
 	Responsável pela criação: Evelyn Lima
 	UML - Ainda não feito
 
-R005 - Feedback
+R005 - feedback
 	O objetivo desse requisito é de receber feedbacks por parte do usuário perante ao serviço solicitado pelo mesmo.
 	Responsável pela sua criação: Arthur Navarro Miksza
 	Pacote UML - Ainda não foi feito.
 	
-R006 -  Opções de pesquisa e formas de apresentação dos resultados
+R006 -  nota_fiscal_eletrônica
+	O sistema deve permitir que o cliente emita uma nota fiscal relacionada ao serviço que o mesmo solicitou para o prestador. Contendo as informações do serviço, data, preço, etc.
+	Responsável pela sua criação: Augusto Henrique Salla Rosa
+	Pacote UML - Ainda não foi feito.	
 
-	Um um campo p/ a pesquisa,neste campo podem ser pesquisados;nome da empresa desejada,tipo de serviço desejado, o CNPJ da 		empresa.O resultado da pesquisa deve ser uma lista,nesta lista deve aparecer o nome da empresa,CNPJ,uma pequena lista de 		serviços oferecidos e uma foto(opcional) 
-	Responsável pela sua criação: Luis Renato Gazolla
-	Pacote UML - Ainda não foi feito	
-
-R007 - Agendar Serviço
+R007 - agendar_serviço
 	O sistema deve disponibilizar os dias disponíveis para cada serviço prestado, e caso algum seja escolhido deixar dia ocupado.
 	Responsável pela sua criação: Matheus Antonio Anastácio da Silva
 	Pacote UML - Ainda não foi feito.
 
-R009 - Indicação
+R008 - ???
+
+R009 - indicação
 	O sistema deve disponibilizar uma forma que o cliente possa pedir indicação para outros clientes para determinado serviço. O cliente especifica o serviço que deseja e outros clientes podem sugerir empresas/ prestadores de serviços que já conheçam.
 	Responsável pela sua criação: Rafael Wilson Dantas da Silva
 	Pacote UML - Ainda não foi feito.
 
-R010 - Google Analytics 
+R010 - google_analytics 
 	Sistema deve fazer a integração com o Google Analytics com objetivo de identificar os principais dados dos usuários.
        Responsável pela sua criação: Silvia Ramalho da Silva
        Pacote UML - Ainda não foi feito
 
-R011 - Integração Google Agenda
+R011 - google_agenda
 	Este requisito tem como objetivo exportar os dados referente a agendamento de serviços, para o sistema de calendários ddo Google (Calendar).
        Responsável pela sua criação: Diego Pereira do Nascimento
        Pacote UML - Ainda não foi feito
 
-R012 - Requisito de Cadastro, alteração e remoção de um Prestador de Serviços (Pessoa física, jurídica)
+R012 - crud_prestador
+	Requisito de Cadastro, alteração e remoção de um Prestador de Serviços (Pessoa física, jurídica)
        Responsável pela sua criação: Matheus Sadao yamaguchi
        Pacote UML - Ainda não foi feito
        
-R013 - Orçamento (usar um formulário = orcamento)
+R013 - orcamento
        Este requisito tem por objetivo permitir que os usuários do aplicaivo, possam realizar um orçamento de forma prévia, com informações contantes no perfil dos prestadores, ou até mesmo, solicitar um orçamento especificando materiais, quantidades e coisas assim, tudo o que envolvem este "contrato" de serviço.
 	   Funções: Deve existir um campo no form para selecionar o prestador a quem se deseja ter contato, um campo para se escrever todo o conteudo desejado, e por ultimo campos para informações de contato do solicitante.
        Responsável pela sua criação: Leonardo Santos Martins
        Pacote UML - Ainda não foi feito
 
-R016 - Serviços da empresa e preços dentro da plataforma.
-	Ao escolher a empresa/serviço, o cliente deve ser direcionado p/ a página da empresa que fica alocada dentro da plataforma, nesta página há uma lista de serviços que a empresa realiza, assim como uma lista de preços referentes aos serviços listados.
+R014 - lembrete_cliente
+	Este requisito tem como objetivo avisar o cliente via email ou celular que existe um serviço a ser prestado requerido.
+	Responsável pela criação: Gabrielli Oliveira de Jesus.
+	Pacote UML: Não realizado no momento da descrição desta tarefa.
+
+R015 - autocadastro
+	O sistema deve permitir o auto cadastro de novos usuários utilizando confirmação por email
+	Responsável pela criação:Bismarck Renan De Souza
+	
+R016 - site_empresa
+	Serviços da empresa e preços dentro da plataforma.Ao escolher a empresa/serviço, o cliente deve ser direcionado p/ a página da empresa que fica alocada dentro da plataforma, nesta página há uma lista de serviços que a empresa realiza, assim como uma lista de preços referentes aos serviços listados.
 	Responsável pela sua criação : Jéssica Tiemi Yamada Terada
 	Pacote UML - Ainda não foi feito.
 
-R017 - Relatório de compras
+R017 - relatorio-compras
 	Este requisito tem como objetivo de realizar relatório das últimas compras (ultimas, por intervalo de data).
        Responsável pela sua criação: Lucas Fredegoto Reinaldi
        Pacote UML - Ainda não foi feito
-       
-R020  - Suporte ao cliente
+
+R018  - suporte
 	Este requisito tem como objetivo fornecer um chat para suporte ao cliente. Por meio dele, os usuários poderão esclarecer dúvidas e receber sugestões.
        Responsável pela sua criação: Valéria Banachi Barreto
        Pacote UML - Ainda não foi feito
-       
-       
-REQUISITOS DE PESSOAS AINDA NÃO APROVADAS
+       	
+R019 -  buscas_pag_principal
+	Pagina inicial do app, com capacidade de busca;nome da empresa desejada,tipo de serviço desejado.O resultado da pesquisa deve ser uma lista,nesta lista deve aparecer o nome da empresa,CNPJ,uma pequena lista de serviços oferecidos e uma foto(opcional) 
+	Responsável pela sua criação: Luis Renato Gazolla
+	Pacote UML - Ainda não foi feito	
 
-R0XX - Sistema de bonificação(promoções). 
-	Este requisito tem como objetivo notificar o usuário de que após tantos serviços contratados, ganha-se um bônus.
+R020 - bonificacoes
+	Sistema de bonificação(promoções). Este requisito tem como objetivo notificar o usuário de que após tantos serviços contratados, ganha-se um bônus.
        Responsável pela sua criação: Caroline Rezende Barroso
        Pacote UML - Ainda não foi feito
-
-
-Fim da conversa no bate-papo

@@ -87,4 +87,14 @@ R020  - Suporte ao cliente
 	Este requisito tem como objetivo fornecer um chat para suporte ao cliente. Por meio dele, os usuários poderão esclarecer dúvidas e receber sugestões.
        Responsável pela sua criação: Valéria Banachi Barreto
        Pacote UML - Ainda não foi feito
+       
+       
+REQUISITOS DE PESSOAS AINDA NÃO APROVADAS
+
+R0XX - Sistema de bonificação(promoções). 
+	Este requisito tem como objetivo notificar o usuário de que após tantos serviços contratados, ganha-se um bônus.
+       Responsável pela sua criação: Caroline Rezende Barroso
+       Pacote UML - Ainda não foi feito
+
+
 Fim da conversa no bate-papo

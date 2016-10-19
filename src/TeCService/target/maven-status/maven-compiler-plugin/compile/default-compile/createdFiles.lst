@@ -1,7 +1,7 @@
-br/data/entity/Teste.class
-br/jsf/mbeans/JsfTeste.class
-br/data/entity/Teste_.class
-br/data/crud/CrudTeste.class
-br/data/crud/EMNames.class
-br/data/crud/AbstractCrud.class
-br/jsf/mbeans/JsfTesteSelect.class
+br\data\crud\AbstractCrud.class
+br\jsf\mbeans\JsfTesteSelect.class
+br\jsf\mbeans\JsfTeste.class
+br\data\crud\CrudTeste.class
+br\data\entity\Teste_.class
+br\data\entity\Teste.class
+br\data\crud\EMNames.class

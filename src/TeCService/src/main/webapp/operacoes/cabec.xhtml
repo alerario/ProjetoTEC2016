@@ -3,22 +3,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <div style="background-color: bisque" >
-        Cabecalho da aplicacao
-        Elabore aqui o cabecalho da aplicacao
-        Escolha uma opcao:
-        <br></br>
+        <div style="background-color: bisque" >       
         <hr></hr>
         <h:form>
-            Teste: 
-            <h:button value="Exibir todos" outcome="/operacoes/crudteste/listall.xhtml" />
-            <h:button value="Consultar/buscar" outcome="/operacoes/crudteste/listselect.xhtml" />
-            <h:button value="Cadastrar" outcome="/operacoes/crudteste/add.xhtml" />
+            <h:form>
+                    <p:menubar>
+                        <p:submenu label="Cadastros" icon="ui-icon-document">
+                            <p:submenu label="Teste">
+                                <p:menuitem value="Exibir todos" outcome="/operacoes/crudteste/listall.xhtml" />
+                                <p:menuitem value="Consultar/Buscar" outcome="/operacoes/crudteste/listselect.xhtml" />
+                                <p:menuitem value="Add" outcome="/operacoes/crudteste/add.xhtml" />
+                            </p:submenu>
+                            <p:separator/>
+                            
+                            <p:submenu label="Coloque aqui os cruds">
+
+                            </p:submenu>
+                            
+                        </p:submenu>
+
+                        
+                        <f:facet name="options">                      
+                            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />
+                        </f:facet>
+                    </p:menubar>
+                </h:form>
           
         </h:form>
         </div>

@@ -20,6 +20,22 @@ create table public.cliente
 	CONSTRAINT pk_cliente primary key (codigo)
 );
 
+create table public.negociacao
+(
+	cod_negociacao integer NOT NULL,
+	id_cliente varchar NOT NULL,
+	id_fornecedor varchar NOT NULL
+	proposta_cliente varchar,
+	proposta_fornecedor varchar,
+	intervalo_cliente varchar,
+	intervalo_fornecedor varchar,
+	status_negociacao boolean,
+	CONSTRAINT pk_negociacao primary key (cod_negociacao),
+	CONSTRAINT fk_cliente foreign key (id_cliente) references pessoaFisica(cpf),
+	CONSTRAINT fk_fornecedor foreign key (id_fornecedor) references pessoaJuridica(cnpj)
+	
+);
+
 create table public.pessoaJuridica
 (
 

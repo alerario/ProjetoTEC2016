@@ -28,3 +28,12 @@ INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro
 INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cnpj) values (4, "Jose", "99582569", "Rua 311", "258", "Centro", "Londrina", "Parana", "01234521413");
 INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cnpj) values (5, "Josefa", "99342569", "Rua 14", "20", "Centro", "Curitiba", "Parana", "01234521414");
 
+--Tabela Relatórios
+
+INSERT INTO public.relatorios(cod_relatorios, id_cliente, id_fornecedor, id_servico, descricao) values (1, 2, 12, "Trabalho realizado com antecedência.");
+INSERT INTO public.relatorios(cod_relatorios, id_cliente, id_fornecedor, id_servico, descricao) values (2, 5, 12, "Serviço com prazo aumentado.");
+INSERT INTO public.relatorios(cod_relatorios, id_fornecedor, id_servico, descricao) values (3, 6, 12, "Relatório mensal de serviços");
+INSERT INTO public.relatorios(cod_relatorios, id_fornecedor, id_servico, descricao) values (4, 7, 12, "Mudança de diretoria.");
+
+
+

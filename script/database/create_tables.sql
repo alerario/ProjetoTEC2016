@@ -7,6 +7,19 @@ CREATE TABLE public.teste
     CONSTRAINT pk_teste PRIMARY KEY (codigo)
 );
 
+CREATE TABLE public.categoria(
+	Cod_categoria SERIAL PRIMARY KEY,
+	Nome VARCHAR(50)
+);
+
+CREATE TABLE public.servico(
+	Cod_servico SERIAL PRIMARY KEY,
+	Descricao VARCHAR(255),
+	Valor DOUBLE NOT NULL,
+	Cod_categoria INTEGER,
+	CONSTRAINT fk_servico_categoria foreign key (Cod_categoria) references public.categoria(Cod_categoria)
+);
+
 create table public.cliente
 (
 	cod_client integer NOT NULL,

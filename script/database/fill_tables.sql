@@ -12,6 +12,23 @@ INSERT INTO public.teste(codigo, nome) VALUES (4, 'Donato');
 INSERT INTO public.teste(codigo, nome) VALUES (5, 'Rita');
 INSERT INTO public.teste(codigo, nome) VALUES (6, 'Silvia');
 
+-------------------------------------------
+--Tabela Categoria
+
+INSERT INTO public.categoria(Nome) VALUES('Auditoria');
+INSERT INTO public.categoria(Nome) VALUES('Consultoria');
+INSERT INTO public.categoria(Nome) VALUES('Viagem');
+INSERT INTO public.categoria(Nome) VALUES('Limpeza/Manutenção');
+INSERT INTO public.categoria(Nome) VALUES('Contábeis');
+
+-------------------------------------------
+--Tabela Servico
+
+INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Declaração do Imposto de Renda', 80, 5);
+INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Limpeza e formatação de computadores', 100, 4);
+INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Cruzerio soberano - Saída 29/01/2017', 1618, 3);
+INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Consultoria com finalidade de ampliar os lucros e faturamentos no seguimento de nutrição animal.', 30000, 2);
+INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Auditoria de sisternas', 75, 1);
 
 -------------------------------------------
 --Tabela Cliente

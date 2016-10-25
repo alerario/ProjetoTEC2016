@@ -2,6 +2,7 @@
 
 CREATE TABLE public.teste
 (
+	
     codigo integer NOT NULL,
     nome character varying (70),
     CONSTRAINT pk_teste PRIMARY KEY (codigo)

@@ -71,6 +71,7 @@ create table public.pessoaFisica
 	cpf varchar NOT NULL	
 )inherits(cliente);
 
+/* ? Já existe a tabela serviço
 create table public.servico 
 (
 	cod_servico varchar NOT NULL,
@@ -78,3 +79,17 @@ create table public.servico
 	categoria varchar NOT NULL,
 	descricao varchar
 )
+*/
+
+create table public.agendamento
+(
+	cod_agendamento serial PRIMARY KEY,
+	dia INT NOT NULL,
+	mes INT NOT NULL,
+	ano INT NOT NULL,
+	horas INT NOT NULL,
+	minutos INT NOT NULL,
+	duracao INT NOT NULL,
+	servico INT NOT NULL,
+	CONSTRAINT fk_servico_agendamento FOREIGN KEY (servico) REFERENCES public.servico(Cod_servico)
+);

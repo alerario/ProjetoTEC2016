@@ -52,5 +52,10 @@ INSERT INTO public.relatorios(cod_relatorios, id_cliente, id_fornecedor, id_serv
 INSERT INTO public.relatorios(cod_relatorios, id_fornecedor, id_servico, descricao) values (3, 6, 12, "Relatório mensal de serviços");
 INSERT INTO public.relatorios(cod_relatorios, id_fornecedor, id_servico, descricao) values (4, 7, 12, "Mudança de diretoria.");
 
-
-
+--Tabela Agendamento
+INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (25, 10, 2016, 15, 30, 30, 1);
+INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (30, 10, 2016, 10, 00, 60, 4);
+INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (10, 11, 2016, 14, 15, 180, 2);
+INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (11, 11, 2016, 9, 00, 45, 1);
+INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (22, 11, 2016, 8, 00, 120, 5);
+INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (29, 1, 2017, 9, 00, 0, 3);

@@ -1,4 +1,4 @@
---Este script para criacao das tabelas no banco de dados
+﻿--Este script para criacao das tabelas no banco de dados
 
 CREATE TABLE public.teste
 (
@@ -93,3 +93,28 @@ create table public.agendamento
 	servico INT NOT NULL,
 	CONSTRAINT fk_servico_agendamento FOREIGN KEY (servico) REFERENCES public.servico(Cod_servico)
 );
+
+
+create table public.prestadorServico(
+	cod_prestador double not null,
+	endereco_fk double REFERENCES endereco,
+	telefone varchar,
+	primary key(cod_prestaador)
+);
+
+create table public.fisica(
+	nome varchar not null,
+	cpf varchar not null,
+	rg varchar not null,
+	UNIQUE(cpf)
+)inherits(prestadorServico);
+
+create table public.juridica(
+	razaoSocial varchar not null,
+	nomeFantasia varchar not null,
+	cnpj varchar not null,
+	inscricaoMunicipal varchar not null,
+	UNIQUE(cnpj)
+)inherits(prestradorServico;
+
+

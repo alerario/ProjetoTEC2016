@@ -1,4 +1,4 @@
--- script para popular o banco. 
+﻿-- script para popular o banco. 
 -- Pode ser utilizado nos testes ou novos scrips para populacao poderao ser criados
 -- Caso não tenha crud, um conjunto basico de registros deve ser adicionado a tabela. Utilize este script para isso
 
@@ -59,3 +59,18 @@ INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) 
 INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (11, 11, 2016, 9, 00, 45, 1);
 INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (22, 11, 2016, 8, 00, 120, 5);
 INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (29, 1, 2017, 9, 00, 0, 3);
+
+
+
+--Tabela Prestador de Servicos
+INSERT INTO public.fisica(cod_prestador, nome, rg, cpf, telefone, rua, numero, bairro, cidade, estado)
+	values  (1, "Maloka", "1234567", "7654321", "4332165498", "Rua dos bobo", 0, "Centro", "Cornelio Procópio", "PR"),
+	        (2, "Pelé", "2345678", "876432", "4336925814", "Rua 100", 100, "Centro", "Cornelio Procópio", "PR"),
+		(3, "Marcio", "3456789", "9876543", "4374185263", "Rua 102", 102, "Centro", "Cornelio Procópio", "PR"),
+		(4, "Edilme", "4567890", "0987654", "4385274966", "Rua 104", 104, "Centro", "Cornelio Procópio", "PR");
+
+INSERT INTO public.juridica(cod_prestador, razaoSocial, nomeFantasia, cnpj, inscricaoMunicipal, telefone, rua, numero, bairro, cidade, estado)
+	values  (5, "Copel", "Copel ltda", "98765433", "12345", "4399887766", "Avenida 100", 13, "Centro", "Cornelio Procópio", "PR"),
+	        (6, "Papelaria Aquarela", "Aquarela ltda", "3323", "12333", "12331233323", "Avenida 102", 123, "Centro", "Cornelio Procópio", "PR"),
+		(7, "Raquel Biju", "Raquel ltda", "414133233", "144232", "4231132233", "Avenida 302", 323, "Centro", "Cornelio Procópio", "PR"),
+		(8, "Eletrotrafo", "Eletrotrafo ltda", "141414114", "442332", "3344412232", "Avenida 1023", 322, "Centro", "Cornelio Procópio", "PR");

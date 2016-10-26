@@ -15,7 +15,7 @@ CREATE TABLE public.categoria(
 CREATE TABLE public.servico(
 	Cod_servico SERIAL PRIMARY KEY,
 	Descricao VARCHAR(255),
-	Valor DOUBLE NOT NULL,
+	Valor NUMERIC NOT NULL,
 	Cod_categoria INTEGER,
 	CONSTRAINT fk_servico_categoria foreign key (Cod_categoria) references public.categoria(Cod_categoria)
 );

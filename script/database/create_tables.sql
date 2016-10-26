@@ -22,7 +22,7 @@ CREATE TABLE public.servico(
 
 create table public.cliente
 (
-	cod_client integer NOT NULL,
+	cod_cliente integer NOT NULL,
 	nome varchar NOT NULL,
 	telefone varchar NOT NULL,
 	rua varchar,
@@ -30,8 +30,23 @@ create table public.cliente
 	bairro varchar,
 	cidade varchar,
 	estado varchar,	
-	CONSTRAINT pk_cliente primary key (codigo)
+	CONSTRAINT pk_cliente primary key (cod_cliente)
 );
+
+create table public.pessoaJuridica
+(
+
+	cnpj varchar NOT NULL
+	
+)inherits(cliente);
+
+create table public.pessoaFisica
+(
+
+	cpf varchar NOT NULL
+	
+)inherits(cliente);
+
 
 create table public.negociacao
 (
@@ -48,6 +63,7 @@ create table public.negociacao
 	CONSTRAINT fk_fornecedor foreign key (id_fornecedor) references pessoaJuridica(cnpj)
 );
 
+
 create table public.relatorios
 (
 	cod_relatorios integer NOT NULL,
@@ -61,15 +77,6 @@ create table public.relatorios
 	CONSTRAINT fk_servico foreign key (id_servico) references servico(cod_servico)
 );
 
-create table public.pessoaJuridica
-(
-	cnpj varchar NOT NULL	
-)inherits(cliente);
-
-create table public.pessoaFisica
-(
-	cpf varchar NOT NULL	
-)inherits(cliente);
 
 /* ? Já existe a tabela serviço
 create table public.servico 

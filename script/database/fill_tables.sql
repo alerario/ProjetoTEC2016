@@ -2,75 +2,69 @@
 -- Pode ser utilizado nos testes ou novos scrips para populacao poderao ser criados
 -- Caso não tenha crud, um conjunto basico de registros deve ser adicionado a tabela. Utilize este script para isso
 
----------------------------------------------
---TABELA TESTE
+
+-- TABELA TESTE
 
 INSERT INTO public.teste(codigo, nome) VALUES (1, 'Alexandre L''Erario');
 INSERT INTO public.teste(codigo, nome) VALUES (2, 'Maria');
 INSERT INTO public.teste(codigo, nome) VALUES (3, 'Paula');
-INSERT INTO public.teste(codigo, nome) VALUES (4, 'Donato');
-INSERT INTO public.teste(codigo, nome) VALUES (5, 'Rita');
-INSERT INTO public.teste(codigo, nome) VALUES (6, 'Silvia');
-
--------------------------------------------
---Tabela Categoria
-
-INSERT INTO public.categoria(Nome) VALUES('Auditoria');
-INSERT INTO public.categoria(Nome) VALUES('Consultoria');
-INSERT INTO public.categoria(Nome) VALUES('Viagem');
-INSERT INTO public.categoria(Nome) VALUES('Limpeza/Manutenção');
-INSERT INTO public.categoria(Nome) VALUES('Contábeis');
-
--------------------------------------------
---Tabela Servico
-
-INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Declaração do Imposto de Renda', 80, 5);
-INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Limpeza e formatação de computadores', 100, 4);
-INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Cruzerio soberano - Saída 29/01/2017', 1618, 3);
-INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Consultoria com finalidade de ampliar os lucros e faturamentos no seguimento de nutrição animal.', 30000, 2);
-INSERT INTO public.servico(Descricao, Valor, Cod_categoria) VALUES('Auditoria de sisternas', 75, 1);
-
--------------------------------------------
---Tabela Cliente
-
-INSERT INTO public.pessoaJuridica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cnpj) values (1, 'Coca-Pepsi', '98542569', 'Rua 1', '251', 'Centro', 'Londrina', 'Parana', '07123456000110123456000110');
-INSERT INTO public.pessoaJuridica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cnpj) values (2, 'Burguer Donalds', '99577569', 'Rua 2', '252', 'Centro', 'Sao Paulo', 'Sao Paulo', '04123458000110000110');
-INSERT INTO public.pessoaJuridica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cnpj) values (3, 'Mc Bobs', '99542569', 'Rua 3', '230', 'Centro', 'Ibipora', 'Parana', '04123456000118');
-INSERT INTO public.pessoaJuridica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cnpj) values (4, 'Idroid', '99542561', 'Rua 4', '253', 'Centro', 'Londrina', 'Parana', '04123456000117');
-INSERT INTO public.pessoaJuridica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cnpj) values (5, 'Nestle', '99534666', 'Rua 5', '254', 'Centro', 'Curitiba', 'Parana', '04123456000116');
-
-INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cpf) values (1, 'Joao', '99547769', 'Rua 80', '2120', 'Centro', 'Londrina', 'Parana', '01234521410');
-INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cpf) values (2, 'Joana', '97542569', 'Rua 81', '2850', 'Centro', 'Sao Paulo', 'Sao Paulo', '01234521411');
-INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cpf) values (3, 'Joaquim', '97742569', 'Rua 51', '240', 'Centro', 'Rio de Janeiro', 'Rio de Janeiro', '01234521412');
-INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cpf) values (4, 'Jose', '99582569', 'Rua 311', '258', 'Centro', 'Londrina', 'Parana', '01234521413');
-INSERT INTO public.pessoaFisica(cod_cliente, nome, telefone, rua, numero, bairro, cidade, estado, cpf) values (5, 'Josefa', '99342569', 'Rua 14', '20', 'Centro', 'Curitiba', 'Parana', '01234521414');
-
---Tabela Relatórios
-
-INSERT INTO public.relatorios(cod_relatorios, id_cliente, id_fornecedor, id_servico, descricao) values (1, 2, 12, "Trabalho realizado com antecedência.");
-INSERT INTO public.relatorios(cod_relatorios, id_cliente, id_fornecedor, id_servico, descricao) values (2, 5, 12, "Serviço com prazo aumentado.");
-INSERT INTO public.relatorios(cod_relatorios, id_fornecedor, id_servico, descricao) values (3, 6, 12, "Relatório mensal de serviços");
-INSERT INTO public.relatorios(cod_relatorios, id_fornecedor, id_servico, descricao) values (4, 7, 12, "Mudança de diretoria.");
-
---Tabela Agendamento
-INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (25, 10, 2016, 15, 30, 30, 1);
-INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (30, 10, 2016, 10, 00, 60, 4);
-INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (10, 11, 2016, 14, 15, 180, 2);
-INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (11, 11, 2016, 9, 00, 45, 1);
-INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (22, 11, 2016, 8, 00, 120, 5);
-INSERT INTO public.agendamento(dia, mes, ano, horas, minutos, duracao, servico) VALUES (29, 1, 2017, 9, 00, 0, 3);
 
 
+-- Tabela Categoria
 
---Tabela Prestador de Servicos
-INSERT INTO public.fisica(cod_prestador, nome, rg, cpf, telefone, rua, numero, bairro, cidade, estado)
-	values  (1, "Maloka", "1234567", "7654321", "4332165498", "Rua dos bobo", 0, "Centro", "Cornelio Procópio", "PR"),
-	        (2, "Pelé", "2345678", "876432", "4336925814", "Rua 100", 100, "Centro", "Cornelio Procópio", "PR"),
-		(3, "Marcio", "3456789", "9876543", "4374185263", "Rua 102", 102, "Centro", "Cornelio Procópio", "PR"),
-		(4, "Edilme", "4567890", "0987654", "4385274966", "Rua 104", 104, "Centro", "Cornelio Procópio", "PR");
+INSERT INTO public.categoria(cod_categoria, nome) VALUES (1, 'Auditoria');
+INSERT INTO public.categoria(cod_categoria, nome) VALUES (2, 'Consultoria');
+INSERT INTO public.categoria(cod_categoria, nome) VALUES (3, 'Viagem');
 
-INSERT INTO public.juridica(cod_prestador, razaoSocial, nomeFantasia, cnpj, inscricaoMunicipal, telefone, rua, numero, bairro, cidade, estado)
-	values  (5, "Copel", "Copel ltda", "98765433", "12345", "4399887766", "Avenida 100", 13, "Centro", "Cornelio Procópio", "PR"),
-	        (6, "Papelaria Aquarela", "Aquarela ltda", "3323", "12333", "12331233323", "Avenida 102", 123, "Centro", "Cornelio Procópio", "PR"),
-		(7, "Raquel Biju", "Raquel ltda", "414133233", "144232", "4231132233", "Avenida 302", 323, "Centro", "Cornelio Procópio", "PR"),
-		(8, "Eletrotrafo", "Eletrotrafo ltda", "141414114", "442332", "3344412232", "Avenida 1023", 322, "Centro", "Cornelio Procópio", "PR");
+
+-- Tabela Endereço
+
+INSERT INTO public.endereco(cod_endereco, rua, numero, bairro, estado, cidade) VALUES (1, 'Rua y', '123', 'centro', 'pr', 'sao paulo');
+INSERT INTO public.endereco(cod_endereco, rua, numero, bairro, estado, cidade) VALUES (2, 'Rua x', '3223', 'litoral', 'sp', 'sao caetano');
+INSERT INTO public.endereco(cod_endereco, rua, numero, bairro, estado, cidade) VALUES (3, 'Rua z', '12223', 'lolz', 'sc', 'sao bento');
+
+
+-- Tabela Fisica
+
+INSERT INTO public.fisica(cod_fisica, nome, cpf, rg) VALUES (1, 'Joao', '100000', '011111');
+INSERT INTO public.fisica(cod_fisica, nome, cpf, rg) VALUES (2, 'Marcio', '222221', '122222');
+INSERT INTO public.fisica(cod_fisica, nome, cpf, rg) VALUES (3, 'Carlos', '333331', '133333');
+
+
+-- Tabela Juridica
+
+INSERT INTO public.juridica(cod_juridica, razao_social, nome_fantasia, cnpj, inscricao_municipal) values (1, 'Seila1', 'Coca Cola1', '1211132113', 'Centro');
+INSERT INTO public.juridica(cod_juridica, razao_social, nome_fantasia, cnpj, inscricao_municipal) values (2, 'Seila2', 'Coca Cola2', '122222113', 'Centro');
+INSERT INTO public.juridica(cod_juridica, razao_social, nome_fantasia, cnpj, inscricao_municipal) values (3, 'Seila3', 'Coca Cola3', '13232113', 'Centro');
+
+
+-- Tabela Cliente
+
+INSERT INTO public.cliente(cod_cliente, telefone, codfk_fisica, codfk_endereco) VALUES (1, '12332', 1, 1);
+INSERT INTO public.cliente(cod_cliente, telefone, codfk_fisica, codfk_endereco) VALUES (2, '12232', 3, 3);
+INSERT INTO public.cliente(cod_cliente, telefone, codfk_fisica, codfk_endereco) VALUES (3, '33332', 2, 2);
+
+
+-- Tabela Prestador
+
+INSERT INTO public.prestador(cod_prestador, telefone, codfk_juridica, codfk_endereco) VALUES (1, '123321', '2', '1');
+INSERT INTO public.prestador(cod_prestador, telefone, codfk_fisica, codfk_endereco) VALUES (2, '123321', '1', '1');
+INSERT INTO public.prestador(cod_prestador, telefone, codfk_fisica, codfk_juridica, codfk_endereco) VALUES (3, '123321', '1', '2', '1');
+
+ 
+-- Tabela Servico
+
+INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(1, 'Declaração do Imposto de Renda1', "120", 1, 1, 1);
+INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(2, 'Declaração do Imposto de Renda1', "120", 2, 2, 3);
+INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(3, 'Declaração do Imposto de Renda1', "120", 3, 3, 3);
+
+-- Tabela Agendamento
+INSERT INTO public.agendamento(cod_agendamento, dia, mes, ano, horas, minutos, duracao, codfk_servico) VALUES (1, 25, 10, 2016, 15, 30, 30, 1);
+INSERT INTO public.agendamento(cod_agendamento, dia, mes, ano, horas, minutos, duracao, codfk_servico) VALUES (2, 25, 10, 2016, 15, 30, 30, 2);
+INSERT INTO public.agendamento(cod_agendamento, dia, mes, ano, horas, minutos, duracao, codfk_servico) VALUES (3, 25, 10, 2016, 15, 30, 30, 3);
+
+
+
+
+
+

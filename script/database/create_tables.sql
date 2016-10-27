@@ -1,127 +1,98 @@
-﻿--Este script para criacao das tabelas no banco de dados
-
+﻿
 CREATE TABLE public.teste
-(	
+(
     codigo integer NOT NULL,
-    nome character varying (70),
+    nome VARCHAR (70),
     CONSTRAINT pk_teste PRIMARY KEY (codigo)
 );
 
-CREATE TABLE public.categoria(
-	Cod_categoria SERIAL PRIMARY KEY,
-	Nome VARCHAR(50)
+CREATE TABLE public.categoria
+(
+	cod_categoria INTEGER PRIMARY KEY,
+	nome VARCHAR(50)
 );
 
-CREATE TABLE public.servico(
-	Cod_servico SERIAL PRIMARY KEY,
-	Descricao VARCHAR(255),
-	Valor NUMERIC NOT NULL,
-	Cod_categoria INTEGER,
-	CONSTRAINT fk_servico_categoria foreign key (Cod_categoria) references public.categoria(Cod_categoria)
+CREATE TABLE public.endereco
+(
+	cod_endereco INTEGER PRIMARY KEY NOT NULL,
+	rua VARCHAR(150) NOT NULL,
+	numero VARCHAR(10) NOT NULL,    
+	bairro VARCHAR(50) NOT NULL,
+	estado VARCHAR(10) NOT NULL,
+    cidade VARCHAR(100) NOT NULL
+);
+
+create table public.fisica
+(
+	cod_fisica INTEGER PRIMARY KEY NOT NULL,
+	nome VARCHAR(100) NOT NULL,
+	cpf VARCHAR(100) NOT NULL,
+	rg VARCHAR(100) NOT NULL	
+);
+
+create table public.juridica
+(
+	cod_juridica INTEGER PRIMARY KEY NOT NULL,
+	razao_social VARCHAR(100) NOT NULL,
+	nome_fantasia VARCHAR(100) NOT NULL,
+	cnpj VARCHAR(100) NOT NULL,
+	inscricao_municipal VARCHAR(100) NOT NULL	
 );
 
 create table public.cliente
 (
-	cod_cliente integer NOT NULL,
-	nome varchar NOT NULL,
-	telefone varchar NOT NULL,
-	rua varchar,
-	numero varchar,
-	bairro varchar,
-	cidade varchar,
-	estado varchar,	
-	CONSTRAINT pk_cliente primary key (cod_cliente)
+	cod_cliente INTEGER PRIMARY KEY NOT NULL,
+    telefone VARCHAR(100),
+    cpf VARCHAR(100),
+	codfk_fisica INTEGER,
+    codfk_endereco INTEGER,		
+	CONSTRAINT fk_cliente_fisica foreign key (codfk_fisica) references public.fisica(cod_fisica),    
+    CONSTRAINT fk_cliente_endereco foreign key (codfk_endereco) references public.endereco(cod_endereco)
 );
 
-create table public.pessoaJuridica
+create table public.prestador
 (
-
-	cnpj varchar NOT NULL
-	
-)inherits(cliente);
-
-create table public.pessoaFisica
-(
-
-	cpf varchar NOT NULL
-	
-)inherits(cliente);
-
-
-create table public.negociacao
-(
-	cod_negociacao integer NOT NULL,
-	id_cliente varchar NOT NULL,
-	id_fornecedor varchar NOT NULL
-	proposta_cliente varchar,
-	proposta_fornecedor varchar,
-	intervalo_cliente varchar,
-	intervalo_fornecedor varchar,
-	status_negociacao boolean,
-	CONSTRAINT pk_negociacao primary key (cod_negociacao),
-	CONSTRAINT fk_cliente foreign key (id_cliente) references pessoaFisica(cpf),
-	CONSTRAINT fk_fornecedor foreign key (id_fornecedor) references pessoaJuridica(cnpj)
+	cod_prestador INTEGER PRIMARY KEY NOT NULL,
+    telefone VARCHAR(50),
+	codfk_fisica INTEGER,
+    codfk_juridica INTEGER,
+	codfk_endereco INTEGER,	
+	CONSTRAINT fk_prestador_fisica foreign key (codfk_fisica) references public.fisica(cod_fisica),
+	CONSTRAINT fk_prestador_juridica foreign key (codfk_juridica) references public.juridica(cod_juridica),    
+	CONSTRAINT fk_prestador_endereco foreign key (codfk_endereco) references public.endereco(cod_endereco)
 );
 
-
-create table public.relatorios
+CREATE TABLE public.servico
 (
-	cod_relatorios integer NOT NULL,
-	id_cliente varchar,
-	id_fornecedor varchar,
-	id_servico varchar NOT NULL
-	descricao varchar,
-	CONSTRAINT pk_relatorios primary key (cod_relatorios),
-	CONSTRAINT fk_cliente foreign key (id_cliente) references pessoaFisica(cpf),
-	CONSTRAINT fk_fornecedor foreign key (id_fornecedor) references pessoaJuridica(cnpj),
-	CONSTRAINT fk_servico foreign key (id_servico) references servico(cod_servico)
+	cod_servico INTEGER PRIMARY KEY NOT NULL,
+	descricao VARCHAR(250),
+	valor DOUBLE NOT NULL,
+	proposta_cliente VARCHAR(100),
+	proposta_fornecedor VARCHAR(100),
+	intervalo_cliente VARCHAR(100),
+	intervalo_fornecedor VARCHAR(100),
+	status_negociacao BOOLEAN,
+    codfk_cliente INTEGER,
+    codfk_prestador INTEGER, 
+	codfk_categoria INTEGER,
+	CONSTRAINT fk_servico_cliente foreign key (codfk_cliente) references public.cliente(cod_cliente),
+	CONSTRAINT fk_servico_prestador foreign key (codfk_prestador) references public.prestador(cod_prestador),    
+	CONSTRAINT fk_servico_categoria foreign key (codfk_categoria) references public.categoria(cod_categoria)
 );
-
-
-/* ? Já existe a tabela serviço
-create table public.servico 
-(
-	cod_servico varchar NOT NULL,
-	valor double NOT NULL,
-	categoria varchar NOT NULL,
-	descricao varchar
-)
-*/
 
 create table public.agendamento
 (
-	cod_agendamento serial PRIMARY KEY,
-	dia INT NOT NULL,
-	mes INT NOT NULL,
-	ano INT NOT NULL,
-	horas INT NOT NULL,
-	minutos INT NOT NULL,
-	duracao INT NOT NULL,
-	servico INT NOT NULL,
-	CONSTRAINT fk_servico_agendamento FOREIGN KEY (servico) REFERENCES public.servico(Cod_servico)
+	cod_agendamento INTEGER PRIMARY KEY,
+	dia VARCHAR(50) NOT NULL,
+    mes VARCHAR(50) NOT NULL,
+    ano VARCHAR(50) NOT NULL,
+    horas VARCHAR(50) NOT NULL,
+    minutos VARCHAR(50) NOT NULL,
+    duracao VARCHAR(50) NOT NULL,
+    descricao VARCHAR(150),    
+	codfk_servico INT NOT NULL,
+	CONSTRAINT fk_agendamento_servico FOREIGN KEY (codfk_servico) REFERENCES public.servico(cod_servico)
 );
 
-
-create table public.prestadorServico(
-	cod_prestador double not null,
-	endereco_fk double REFERENCES endereco,
-	telefone varchar,
-	primary key(cod_prestaador)
-);
-
-create table public.fisica(
-	nome varchar not null,
-	cpf varchar not null,
-	rg varchar not null,
-	UNIQUE(cpf)
-)inherits(prestadorServico);
-
-create table public.juridica(
-	razaoSocial varchar not null,
-	nomeFantasia varchar not null,
-	cnpj varchar not null,
-	inscricaoMunicipal varchar not null,
-	UNIQUE(cnpj)
-)inherits(prestradorServico;
 
 

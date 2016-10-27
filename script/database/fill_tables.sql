@@ -8,6 +8,9 @@
 INSERT INTO public.teste(codigo, nome) VALUES (1, 'Alexandre L''Erario');
 INSERT INTO public.teste(codigo, nome) VALUES (2, 'Maria');
 INSERT INTO public.teste(codigo, nome) VALUES (3, 'Paula');
+INSERT INTO public.teste(codigo, nome) VALUES (4, 'Donato');
+INSERT INTO public.teste(codigo, nome) VALUES (5, 'Rita');
+INSERT INTO public.teste(codigo, nome) VALUES (6, 'Silvia');
 
 
 -- Tabela Categoria

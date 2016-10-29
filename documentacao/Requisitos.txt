@@ -96,7 +96,7 @@ R017 - relatorio-compras
 R018  - suporte
 	Este requisito tem como objetivo fornecer um chat para suporte ao cliente. Por meio dele, os usuários poderão esclarecer dúvidas e receber sugestões.
     Responsável pela sua criação: Valéria Banachi Barreto
-    Pacote UML - Ainda não foi feito
+    Pacote UML - Feito
        	
 R019 -  buscas_pag_principal
 	Pagina inicial do app, com capacidade de buscar, nome da empresa desejada, tipo de serviço desejado. O resultado da pesquisa deve ser uma lista, nesta lista deve aparecer o nome da empresa, CNPJ, uma pequena lista de serviços oferecidos e uma foto (opcional) 

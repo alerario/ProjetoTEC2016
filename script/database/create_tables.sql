@@ -94,5 +94,19 @@ create table public.agendamento
 	CONSTRAINT fk_agendamento_servico FOREIGN KEY (codfk_servico) REFERENCES public.servico(cod_servico)
 );
 
+create table public.mensagemsuporte(
+	cod_mensagem integer primary key,
+	assunto_mensagem varchar(100),
+	resposta_mensagem varchar (1000),
+	pergunta_mensagem varchar (1000)
+
+);
+
+Alter table mensagemsuporte add constraint fk_Cod_prestador foreign 
+key (cod_prestador) references Prestador(cod_prestador) on delete cascade; 
+
+Alter table mensagemsuporte add constraint fk_Cod_cliente foreign 
+key (cod_cliente) references Cliente(cod_cliente) on delete cascade; 
+
 
 

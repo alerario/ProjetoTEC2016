@@ -1,19 +1,11 @@
-﻿
-CREATE TABLE public.teste
-(
-    codigo integer NOT NULL,
-    nome VARCHAR (70),
-    CONSTRAINT pk_teste PRIMARY KEY (codigo)
-);
-
-CREATE TABLE public.categoria
-(
+﻿-- categoria de servico
+CREATE TABLE public.categoria(
 	cod_categoria INTEGER PRIMARY KEY,
 	nome VARCHAR(50)
 );
 
-CREATE TABLE public.endereco
-(
+-- logradouro
+CREATE TABLE public.endereco(
 	cod_endereco INTEGER PRIMARY KEY NOT NULL,
 	rua VARCHAR(150) NOT NULL,
 	numero VARCHAR(10) NOT NULL,    
@@ -22,16 +14,16 @@ CREATE TABLE public.endereco
     cidade VARCHAR(100) NOT NULL
 );
 
-create table public.fisica
-(
+-- pessoa física 
+create table public.fisica(
 	cod_fisica INTEGER PRIMARY KEY NOT NULL,
 	nome VARCHAR(100) NOT NULL,
 	cpf VARCHAR(100) NOT NULL,
 	rg VARCHAR(100) NOT NULL	
 );
 
-create table public.juridica
-(
+-- pessoa juridica 
+create table public.juridica(
 	cod_juridica INTEGER PRIMARY KEY NOT NULL,
 	razao_social VARCHAR(100) NOT NULL,
 	nome_fantasia VARCHAR(100) NOT NULL,
@@ -39,8 +31,8 @@ create table public.juridica
 	inscricao_municipal VARCHAR(100) NOT NULL	
 );
 
-create table public.cliente
-(
+-- cliente do serviço
+create table public.cliente(
 	cod_cliente INTEGER PRIMARY KEY NOT NULL,
     telefone VARCHAR(100),
     cpf VARCHAR(100),
@@ -50,8 +42,8 @@ create table public.cliente
     CONSTRAINT fk_cliente_endereco foreign key (codfk_endereco) references public.endereco(cod_endereco)
 );
 
-create table public.prestador
-(
+-- prestador de serviço
+create table public.prestador(
 	cod_prestador INTEGER PRIMARY KEY NOT NULL,
     telefone VARCHAR(50),
 	codfk_fisica INTEGER,
@@ -62,8 +54,8 @@ create table public.prestador
 	CONSTRAINT fk_prestador_endereco foreign key (codfk_endereco) references public.endereco(cod_endereco)
 );
 
-CREATE TABLE public.servico
-(
+-- serviço
+CREATE TABLE public.servico(
 	cod_servico INTEGER PRIMARY KEY NOT NULL,
 	descricao VARCHAR(250),
 	valor DOUBLE NOT NULL,
@@ -80,8 +72,8 @@ CREATE TABLE public.servico
 	CONSTRAINT fk_servico_categoria foreign key (codfk_categoria) references public.categoria(cod_categoria)
 );
 
-create table public.agendamento
-(
+-- agendamento de serviço
+CREATE TABLE public.agendamento(
 	cod_agendamento INTEGER PRIMARY KEY,
 	dia VARCHAR(50) NOT NULL,
     mes VARCHAR(50) NOT NULL,
@@ -94,7 +86,8 @@ create table public.agendamento
 	CONSTRAINT fk_agendamento_servico FOREIGN KEY (codfk_servico) REFERENCES public.servico(cod_servico)
 );
 
-create table public.mensagemsuporte(
+-- Mensagens para suporte
+CREATE TABLE public.mensagemsuporte(
 	cod_mensagem integer primary key,
 	assunto_mensagem varchar(100),
 	resposta_mensagem varchar (1000),
@@ -102,11 +95,11 @@ create table public.mensagemsuporte(
 
 );
 
-Alter table mensagemsuporte add constraint fk_Cod_prestador foreign 
-key (cod_prestador) references Prestador(cod_prestador) on delete cascade; 
+ALTER TABLE mensagemsuporte ADD CONSTRAINT fk_Cod_prestador foreign 
+key (cod_prestador) REFERENCES Prestador(cod_prestador) ON DELETE CASCADE; 
 
-Alter table mensagemsuporte add constraint fk_Cod_cliente foreign 
-key (cod_cliente) references Cliente(cod_cliente) on delete cascade; 
+ALTER TABLE mensagemsuporte ADD CONSTRAINT fk_Cod_cliente foreign 
+key (cod_cliente) REFERENCES Cliente(cod_cliente) ON DELETE CASCADE; 
 
 
 

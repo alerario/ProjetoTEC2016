@@ -1,4 +1,13 @@
-﻿-- categoria de servico
+-- a tabela teste deve ser criada, pois temos um teste associado a ela.
+-- se nao for criada, o travis acusará erro
+CREATE TABLE public.teste
+(
+    codigo integer NOT NULL,
+    nome VARCHAR (70),
+    CONSTRAINT pk_teste PRIMARY KEY (codigo)
+);
+
+-- categoria de servico
 CREATE TABLE public.categoria(
 	cod_categoria INTEGER PRIMARY KEY,
 	nome VARCHAR(50)

@@ -58,7 +58,7 @@ create table public.prestador(
 CREATE TABLE public.servico(
 	cod_servico INTEGER PRIMARY KEY NOT NULL,
 	descricao VARCHAR(250),
-	valor DOUBLE NOT NULL,
+	valor REAL NOT NULL,
 	proposta_cliente VARCHAR(100),
 	proposta_fornecedor VARCHAR(100),
 	intervalo_cliente VARCHAR(100),

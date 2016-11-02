@@ -1,7 +1,6 @@
 -- a tabela teste deve ser criada, pois temos um teste associado a ela.
 -- se nao for criada, o travis acusará erro
-CREATE TABLE public.teste
-(
+CREATE TABLE public.teste(
     codigo integer NOT NULL,
     nome VARCHAR (70),
     CONSTRAINT pk_teste PRIMARY KEY (codigo)
@@ -100,15 +99,20 @@ CREATE TABLE public.mensagemsuporte(
 	cod_mensagem integer primary key,
 	assunto_mensagem varchar(100),
 	resposta_mensagem varchar (1000),
-	pergunta_mensagem varchar (1000)
+	pergunta_mensagem varchar (1000),
 
+	cod_prestador INTEGER,
+	cod_cliente INTEGER,
+
+	CONSTRAINT fk_Cod_prestador 
+	FOREIGN KEY (cod_prestador) 
+	REFERENCES Prestador(cod_prestador) ON DELETE CASCADE,
+
+	CONSTRAINT fk_Cod_cliente 
+	FOREIGN KEY (cod_cliente) 
+	REFERENCES Cliente(cod_cliente) ON DELETE CASCADE
 );
 
-ALTER TABLE mensagemsuporte ADD CONSTRAINT fk_Cod_prestador foreign 
-key (cod_prestador) REFERENCES Prestador(cod_prestador) ON DELETE CASCADE; 
-
-ALTER TABLE mensagemsuporte ADD CONSTRAINT fk_Cod_cliente foreign 
-key (cod_cliente) REFERENCES Cliente(cod_cliente) ON DELETE CASCADE; 
 
 
 

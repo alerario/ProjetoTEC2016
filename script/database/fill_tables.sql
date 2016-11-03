@@ -57,9 +57,9 @@ INSERT INTO public.prestador(cod_prestador, telefone, codfk_fisica, codfk_juridi
  
 -- Tabela Servico
 
-INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(1, 'Declaração do Imposto de Renda1', "120", 1, 1, 1);
-INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(2, 'Declaração do Imposto de Renda1', "120", 2, 2, 3);
-INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(3, 'Declaração do Imposto de Renda1', "120", 3, 3, 3);
+INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(1, 'Declaração do Imposto de Renda1', 120, 1, 1, 1);
+INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(2, 'Declaração do Imposto de Renda1', 120, 2, 2, 3);
+INSERT INTO public.servico(cod_servico, descricao, valor, codfk_categoria, codfk_cliente, codfk_prestador) VALUES(3, 'Declaração do Imposto de Renda1', 120, 3, 3, 3);
 
 -- Tabela Agendamento
 INSERT INTO public.agendamento(cod_agendamento, dia, mes, ano, horas, minutos, duracao, codfk_servico) VALUES (1, 25, 10, 2016, 15, 30, 30, 1);

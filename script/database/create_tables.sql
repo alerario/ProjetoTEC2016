@@ -6,13 +6,13 @@ CREATE TABLE public.teste(
     CONSTRAINT pk_teste PRIMARY KEY (codigo)
 );
 
--- categoria de servico
+-- categoria de servico (ok)
 CREATE TABLE public.categoria(
 	cod_categoria INTEGER PRIMARY KEY,
 	nome VARCHAR(50)
 );
 
--- logradouro
+-- logradouro (ajustar) - nome das tabelas em minusc. efetuar heranca em bd
 CREATE TABLE public.endereco(
 	cod_endereco INTEGER PRIMARY KEY NOT NULL,
 	rua VARCHAR(150) NOT NULL,
@@ -22,7 +22,17 @@ CREATE TABLE public.endereco(
     cidade VARCHAR(100) NOT NULL
 );
 
--- pessoa física 
+-- usuario
+CREATE TABLE public.usuario
+(
+  cod_usuario serial,
+  login character varying(40),
+  senha character varying(40),
+  email character varying(100),
+  CONSTRAINT usuario_pkey PRIMARY KEY (cod_usuario)
+);
+
+-- pessoa física -- criar como heranca de usuario
 create table public.fisica(
 	cod_fisica INTEGER PRIMARY KEY NOT NULL,
 	nome VARCHAR(100) NOT NULL,

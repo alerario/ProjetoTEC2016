@@ -19,7 +19,7 @@ import javax.faces.context.FacesContext;
  *
  * @author Lucas
  */
-@ManagedBean(name = "calendario")
+@ManagedBean(name = "exportarEvento")
 @SessionScoped
 public class ExportarEvento {
     

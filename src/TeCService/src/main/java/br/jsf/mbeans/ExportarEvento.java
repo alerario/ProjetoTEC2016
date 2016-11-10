@@ -11,6 +11,9 @@ import javax.faces.bean.SessionScoped;
 import java.io.FileWriter;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -76,4 +79,28 @@ public class ExportarEvento {
             e.printStackTrace();
         }
     }
+    
+    public void download() throws IOException {
+    FacesContext fc = FacesContext.getCurrentInstance();
+    ExternalContext ec = fc.getExternalContext();
+
+    ec.responseReset(); // Some JSF component library or some Filter might have set some headers in the buffer beforehand. We want to get rid of them, else it may collide.
+    ec.setResponseContentType("text/calendar"); 
+// Check http://www.iana.org/assignments/media-types for all types.
+ //Use if necessary ExternalContext#getMimeType() for auto-detection based on filename.
+//    ec.setResponseContentLength(contentLength); 
+// Set it with the file size. This header is optional. It will work if it's omitted, but the download progress will be unknown.
+    ec.setResponseHeader("Content-Disposition", "attachment; filename=\"" + evento + "\""); // The Save As popup magic is done here. You can give it any file name you want, this only won't work in MSIE, it will use current request URL as file name instead.
+
+    OutputStream output = ec.getResponseOutputStream();
+    // Now you can write the InputStream of the file to the above 
+    //OutputStream the usual way.
+    // ...
+    criarCsv();
+   output.write(template.getBytes());
+    output.flush();
+    output.close();
+    fc.responseComplete(); // Important! Otherwise JSF will attempt to render the response which obviously will fail since it's already written with a file and closed.
+}
+    
 }

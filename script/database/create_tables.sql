@@ -32,6 +32,17 @@ CREATE TABLE public.usuario
   CONSTRAINT usuario_pkey PRIMARY KEY (cod_usuario)
 );
 
+-- analista de marketing, especialização de usuario
+CREATE TABLE public.usuarioMarketing
+(
+  cod_usuarioMarketing INTEGER NOT NULL,
+  login character varying(40),
+  senha character varying(40),
+  email character varying(100),
+  CONSTRAINT usuarioMarketing_pkey PRIMARY KEY (cod_usuarioMarketing)
+  REFERENCES usuario (cod_usuario)
+  );
+
 -- pessoa física -- criar como heranca de usuario
 create table public.fisica(
 	cod_fisica INTEGER PRIMARY KEY NOT NULL,

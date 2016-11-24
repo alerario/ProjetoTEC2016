@@ -40,7 +40,7 @@ CREATE TABLE public.usuarioMarketing
   senha character varying(40),
   email character varying(100),
   CONSTRAINT usuarioMarketing_pkey PRIMARY KEY (cod_usuarioMarketing)
-  REFERENCES usuario (cod_usuario)
+ 
   );
 
 -- pessoa física -- criar como heranca de usuario

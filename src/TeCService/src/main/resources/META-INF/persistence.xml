@@ -3,6 +3,8 @@
   <persistence-unit name="tsPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.data.entity.Teste</class>
+    <class>br.data.entity.Agendamento</class>
+    <class>br.data.entity.Servico</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/tecservice"/>

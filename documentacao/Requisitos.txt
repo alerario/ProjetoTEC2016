@@ -62,7 +62,7 @@ R010 - google_analytics
 R011 - google_agenda
 	Este requisito tem como objetivo exportar os dados referente a agendamento de serviços, para o sistema de calendários ddo Google (Calendar).
     Responsável pela sua criação: Diego Pereira do Nascimento
-    Pacote UML - Ainda não foi feito
+    Pacote UML - Feito
 
 R012 - crud_prestador
 	Requisito de Cadastro, alteração e remoção de um Prestador de Serviços (Pessoa física, jurídica)

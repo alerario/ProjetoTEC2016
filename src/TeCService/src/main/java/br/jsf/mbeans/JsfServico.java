@@ -5,27 +5,34 @@
  */
 package br.jsf.mbeans;
 
+import br.data.entity.Agenda;
+import java.util.Collection;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
 public class JsfServico {
-    
-    private int cod_servico;
+
+    private Integer codServico;
     private String descricao;
-    private double valor;
-    
-    
+    private float valor;
+    private String propostaCliente;
+    private String propostaFornecedor;
+    private String intervaloCliente;
+    private String intervaloFornecedor;
+    private Boolean statusNegociacao;
+    private Collection<Agenda> agendamentoCollection;
+
     public JsfServico() {
     }
 
-    public int getCod_servico() {
-        return cod_servico;
+    public Integer getCodServico() {
+        return codServico;
     }
 
-    public void setCod_servico(int cod_servico) {
-        this.cod_servico = cod_servico;
+    public void setCodServico(Integer codServico) {
+        this.codServico = codServico;
     }
 
     public String getDescricao() {
@@ -36,48 +43,131 @@ public class JsfServico {
         this.descricao = descricao;
     }
 
-    public double getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
-    
-    public void persist(){
-       br.data.entity.Servico servico = new br.data.entity.Servico();
-       servico.setCodServico(cod_servico);
-       servico.setDescricao(descricao);
-       servico.setValor((float) valor);
-       new br.data.crud.CrudServico().persist(servico);
-       this.cod_servico=0;
-       this.descricao="";
-       this.valor=0.00;
+
+    public String getPropostaCliente() {
+        return propostaCliente;
     }
-    
-    public void remove(br.data.entity.Servico servico){
+
+    public void setPropostaCliente(String propostaCliente) {
+        this.propostaCliente = propostaCliente;
+    }
+
+    public String getPropostaFornecedor() {
+        return propostaFornecedor;
+    }
+
+    public void setPropostaFornecedor(String propostaFornecedor) {
+        this.propostaFornecedor = propostaFornecedor;
+    }
+
+    public String getIntervaloCliente() {
+        return intervaloCliente;
+    }
+
+    public void setIntervaloCliente(String intervaloCliente) {
+        this.intervaloCliente = intervaloCliente;
+    }
+
+    public String getIntervaloFornecedor() {
+        return intervaloFornecedor;
+    }
+
+    public void setIntervaloFornecedor(String intervaloFornecedor) {
+        this.intervaloFornecedor = intervaloFornecedor;
+    }
+
+    public Boolean getStatusNegociacao() {
+        return statusNegociacao;
+    }
+
+    public void setStatusNegociacao(Boolean statusNegociacao) {
+        this.statusNegociacao = statusNegociacao;
+    }
+
+    public Collection<Agenda> getAgendamentoCollection() {
+        return agendamentoCollection;
+    }
+
+    public void setAgendamentoCollection(Collection<Agenda> agendamentoCollection) {
+        this.agendamentoCollection = agendamentoCollection;
+    }
+
+    public void persist() {
+        br.data.entity.Servico servico = new br.data.entity.Servico();
+        servico.setCodServico(codServico);
+        servico.setDescricao(descricao);
+        servico.setValor(valor);
+        servico.setPropostaCliente(propostaCliente);
+        servico.setPropostaFornecedor(propostaFornecedor);
+        servico.setIntervaloCliente(intervaloCliente);
+        servico.setIntervaloFornecedor(intervaloFornecedor);
+        servico.setStatusNegociacao(statusNegociacao);
+        servico.setAgendaCollection(agendamentoCollection);
+        new br.data.crud.CrudServico().persist(servico);
+
+        this.codServico = 0;
+        this.descricao = "";
+        this.valor = 0;
+        this.propostaCliente = "";
+        this.propostaFornecedor = "";
+        this.intervaloCliente = "";
+        this.intervaloFornecedor = "";
+        this.statusNegociacao = null;
+        this.agendamentoCollection.removeAll(agendamentoCollection);
+    }
+
+    public void remove(br.data.entity.Servico servico) {
         new br.data.crud.CrudServico().remove(servico);
     }
-    
-    public java.util.Collection<br.data.entity.Servico> getAll(){
+
+    public java.util.Collection<br.data.entity.Servico> getAll() {
         return new br.data.crud.CrudServico().getAll();
     }
 
-    public String update(br.data.entity.Servico servico){
-        this.cod_servico = servico.getCodServico();
+    public String update(br.data.entity.Servico servico) {
+        this.codServico = servico.getCodServico();
         this.descricao = servico.getDescricao();
         this.valor = servico.getValor();
+        this.propostaCliente = servico.getPropostaCliente();
+        this.propostaFornecedor = servico.getPropostaFornecedor();
+        this.intervaloCliente = servico.getIntervaloCliente();
+        this.intervaloFornecedor = servico.getIntervaloFornecedor();
+        this.statusNegociacao = servico.getStatusNegociacao();
+        this.agendamentoCollection = servico.getAgendaCollection();
         return "merge.xhtml";
     }
-    
-    public void merge(){
+
+    public void merge() {
         br.data.entity.Servico servico;
-        servico = new br.data.crud.CrudServico().find(this.cod_servico);
-        servico.setDescricao(this.descricao);
-        servico.setValor((float) this.valor);
+        
+        servico = new br.data.crud.CrudServico().find(this.codServico);
+        
+        servico.setDescricao(descricao);
+        servico.setValor(valor);
+        servico.setPropostaCliente(propostaCliente);
+        servico.setPropostaFornecedor(propostaFornecedor);
+        servico.setIntervaloCliente(intervaloCliente);
+        servico.setIntervaloFornecedor(intervaloFornecedor);
+        servico.setStatusNegociacao(statusNegociacao);
+        servico.setAgendaCollection(agendamentoCollection);
+        
         new br.data.crud.CrudServico().merge(servico);
-        this.cod_servico=0;
-        this.descricao="";  
-        this.valor=0.00;
+
+        this.codServico = 0;
+        this.descricao = "";
+        this.valor = 0;
+        this.propostaCliente = "";
+        this.propostaFornecedor = "";
+        this.intervaloCliente = "";
+        this.intervaloFornecedor = "";
+        this.statusNegociacao = null;
+        this.agendamentoCollection.removeAll(agendamentoCollection);
     }
 }

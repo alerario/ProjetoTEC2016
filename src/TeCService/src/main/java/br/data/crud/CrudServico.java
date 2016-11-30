@@ -21,17 +21,6 @@ public class CrudServico extends AbstractCrud<Servico> {
         super(Servico.class);
     }
 
-    /*
-    public List<br.data.entity.Servico> SelectByNome(String nome) {
-        try {
-            return getEntityManager().createNamedQuery("Teste.findByNome").setParameter("nome", "%" + nome.toUpperCase() + "%").getResultList();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
-    */
-
     @Override
     protected EntityManager getEntityManager() {
         if (em == null) {

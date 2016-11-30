@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="../layout_operacoes.xhtml">
+        <ui:define name="content">
+             <h1>Cadastrar agenda</h1>
+            <h:form>
+                Dia:
+                <h:inputText value="#{jsfAgenda.dia}"  />
+                
+                <br></br>
+                Mês:
+                <h:inputText value="#{jsfAgenda.mes}"  />
+                
+                <br></br>
+                Ano:
+                <h:inputText value="#{jsfAgenda.ano}"  />
+                
+                <br></br>
+                Horas:
+                <h:inputText value="#{jsfAgenda.horas}"  />
+                
+                <br></br>
+                Minutos:
+                <h:inputText value="#{jsfAgenda.minutos}"  />
+                
+                <br></br>
+                Duração:
+                <h:inputText value="#{jsfAgenda.duracao}"  />
+                
+                <br></br>
+                Descrição:
+                <h:inputText value="#{jsfAgenda.descricao}"  />
+                
+                <br></br>
+                Código do serviço:
+                <h:inputText value="#{jsfAgenda.codfkServico}"  />
+                
+                <br></br>
+                <h:commandButton value="salvar novo registro" action="#{jsfAgenda.persist()}"  /> 
+                
+               
+                
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

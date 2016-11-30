@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <ui:composition template="../layout_operacoes.xhtml">
+
+        <ui:define name="content">
+            <h1>Listar todos as agendas</h1>
+            <h:form>
+                <h:dataTable value="#{jsfAgenda.all}" var="agenda">
+                    <h:column>
+                        <h:outputText value="#{agenda.ano}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{agenda.mes}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{agenda.dia}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{agenda.horas}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{agenda.minutos}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{agenda.duracao}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{agenda.descricao}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{agenda.codfkServico}" />
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="remover" action="#{jsfAgenda.remove(agenda)}" onclick="return confirm('Confirma exclusao?');"/>
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="editar" action="#{jsfAgenda.update(agenda)}"/> 
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+</html>

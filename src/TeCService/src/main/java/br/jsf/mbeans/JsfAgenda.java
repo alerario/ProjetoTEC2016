@@ -31,8 +31,7 @@ public class JsfAgenda {
     private String descricao;
     private Servico codfkServico;
 
-    public JsfAgenda() {
-    }
+    public JsfAgenda() {}
 
     public void persist() {
         br.data.entity.Agenda agenda = new br.data.entity.Agenda();

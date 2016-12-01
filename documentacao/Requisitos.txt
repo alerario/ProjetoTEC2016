@@ -1,6 +1,6 @@
 ﻿#Este documento deve conter a descrição de todos os requisitos.
 #Os requisitos são descritos de na ordem de sua numeração
-
+ 
 #proposta:
 #O produto a ser desenvolvido trata-se de um ambiente de integração entre clientes e prestadores de serviços (pessoas físicas ou jurídicas). Um cliente pode buscar na plataforma um profissional/empresa que presta um determinado serviço, negociar preço, forma de pagamento, etc. Os serviços incluem instalações elétricas, pintura, limpeza/higienização de veículos, etc.
 

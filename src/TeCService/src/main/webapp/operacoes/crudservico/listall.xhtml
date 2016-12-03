@@ -7,20 +7,42 @@
     <ui:composition template="../layout_operacoes.xhtml">
 
         <ui:define name="content">
-            <h1>Listar todos os testes</h1>
+            <h1>Listar Todos os Serviços</h1>
             <h:form>
-                <h:dataTable value="#{jsfTeste.all}" var="test">
+                <h:dataTable value="#{jsfServico.all}" var="servico">
                     <h:column>
-                        <h:outputText value="#{test.codigo}" />
+                        <h:outputText value="#{servico.codServico}" />
                     </h:column>
                     <h:column>
-                        <h:outputText value="#{test.nome}" />
+                        <h:outputText value="#{servico.descricao}" />
                     </h:column>
                     <h:column>
-                        <h:commandButton value="remover" action="#{jsfTeste.remove(test)}" onclick="return confirm('Confirma exclusao?');"/> 
+                        <h:outputText value="#{servico.valor}" />
                     </h:column>
                     <h:column>
-                        <h:commandButton value="editar" action="#{jsfTeste.update(test)}"/> 
+                        <h:outputText value="#{servico.propostaCliente}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{servico.propostaFornecedor}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{servico.intervaloCliente}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{servico.intervaloFornecedor}" />
+                    </h:column>
+                    <h:column>
+                        <h:outputText value="#{servico.statusNegociacao}" />
+                    </h:column> 
+                    <!-- Collection
+                    <h:column>
+                        <h:outputText value="#{servico.codServico}" />
+                    </h:column>-->
+                    <h:column>
+                        <h:commandButton value="remover" action="#{jsfServico.remove(servico)}" onclick="return confirm('Confirma exclusao?');"/> 
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="editar" action="#{jsfServico.update(servico)}"/> 
                     </h:column>
                 </h:dataTable>
             </h:form>

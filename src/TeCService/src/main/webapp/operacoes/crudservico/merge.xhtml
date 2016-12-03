@@ -6,20 +6,55 @@
 
     <ui:composition template="../layout_operacoes.xhtml">
         <ui:define name="content">
-             <h1>Modificar testes</h1>
+            <h1>Modificar Serviço</h1>
             <h:form>
                 Codigo:
-                <h:outputText value="#{jsfTeste.codigo}"  />
-                <h:inputHidden value="#{jsfTeste.codigo}"  />
+                <h:outputText value="#{jsfServico.codServico}"  />
+                <h:inputText value="#{jsfServico.codServico}"  />
                 <br></br>
-                Nome:
-                <h:inputText value="#{jsfTeste.nome}" />
-                 
+
+                Descrição:
+                <h:inputTextarea value="#{jsfServico.descricao}"  />
                 <br></br>
-                   
-                <h:commandButton value ="salvar modificacoes do registro" action="#{jsfTeste.merge()}" /> 
-              
-                
+
+                Valor:
+                <h:inputText value="#{jsfServico.valor}"  />
+                <br></br>
+
+                Proposta Cliente:
+                <h:inputTextarea value="#{jsfServico.propostaCliente}"  />
+                <br></br>
+
+                Proposta Fornecedor:
+                <h:inputTextarea value="#{jsfServico.propostaFornecedor}"  />
+                <br></br>
+
+                Intervalo Cliente:
+                <h:inputTextarea value="#{jsfServico.intervaloCliente}"  />
+                <br></br>
+
+                Intervalo Fornecedor:
+                <h:inputTextarea value="#{jsfServico.intervaloFornecedor}"  />
+                <br></br>
+
+
+                Status da Negociação:
+                <h:selectBooleanCheckbox value="#{jsfServico.statusNegociacao}"  />
+                <br></br>
+
+                <!--
+                Intervalo Cliente:
+                <h:inputTextarea  value="#{jsfServico.intervaloCliente}"  />
+                <br></br>
+                -->
+
+                <!-- Falta agendamento collection, não sei usar -->
+
+                <br></br>
+
+                <h:commandButton value ="salvar modificacoes do registro" action="#{jsfServico.merge()}" /> 
+
+
             </h:form>
         </ui:define>
     </ui:composition>

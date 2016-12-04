@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.data.entity.Teste</class>
     <class>br.data.entity.Agendamento</class>
+    <class>br.data.entity.Busca</class>
     <class>br.data.entity.Servico</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

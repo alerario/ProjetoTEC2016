@@ -42,10 +42,10 @@ public class CrudTesteTest {
 
     /**
      * Test of SelectByNome method, of class CrudTeste.
-     */
+    
     @Test
     public void testSelectByNome() {
-        System.out.println("SelectByNome");
+        System.out("SelectByNome");
         CrudTeste instance = new CrudTeste();
         List<Teste> result = instance.SelectByNome("i");
         assertEquals(4, result.size());
@@ -56,5 +56,6 @@ public class CrudTesteTest {
         result = instance.SelectByNome("");
         assertEquals(6, result.size());
     }
+    *  */
     
 }

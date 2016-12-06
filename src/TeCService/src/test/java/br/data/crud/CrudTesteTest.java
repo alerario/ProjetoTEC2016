@@ -42,6 +42,7 @@ public class CrudTesteTest {
 
     /**
      * Test of SelectByNome method, of class CrudTeste.
+    */
     
     @Test
     public void testSelectByNome() {
@@ -56,6 +57,6 @@ public class CrudTesteTest {
         result = instance.SelectByNome("");
         assertEquals(6, result.size());
     }
-    *  */
+    
     
 }

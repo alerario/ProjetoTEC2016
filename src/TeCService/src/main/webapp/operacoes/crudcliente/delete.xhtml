@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <link href="index.css" rel="stylesheet" type="text/css"/>
+    <h:head>
+        <title>Cliente</title>
+    </h:head>
+    <h:body class="background-cad">
+        <h1><div class="txt-Cadastro">Deletar Cliente</div></h1>
+        <h:form >
+            <div class="cad-center">
+               <h:panelGrid columns="3">
+                    <h:outputLabel class="txt-input" value="Digite o email para Excluir"/>
+                    <h:inputText id="email" class="c-input" size="20" value="#{jsfCliente.cli.email}"/>
+                    <h:message for="Email" />
+                </h:panelGrid>    
+                <div class="bts">
+                    <!-- salvar alteração !-->
+                    <h:commandButton  class="bt-padrao btnSalvar" value="Delete" action="#{jsfCliente.remove(e)}" />
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>

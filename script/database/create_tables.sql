@@ -134,6 +134,22 @@ CREATE TABLE public.mensagemsuporte(
 	REFERENCES Cliente(cod_cliente) ON DELETE CASCADE
 );
 
+-- Relação cliente e compra de um serviço
+CREATE TABLE public.clienteServico(
+	
+	cod_clienteServico INTEGER primary key,
+	cod_servico INTEGER,
+	cod_cliente INTEGER,
+	quantidade INTEGER
+
+	CONSTRAINT fk_Cod_servico 
+	FOREIGN KEY (cod_servico) 
+	REFERENCES Servico(cod_servico) ON DELETE CASCADE,
+
+	CONSTRAINT fk_Cod_cliente 
+	FOREIGN KEY (cod_cliente) 
+	REFERENCES Cliente(cod_cliente) ON DELETE CASCADE
+);
 
 
 

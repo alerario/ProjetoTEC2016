@@ -46,7 +46,7 @@ public class CrudTesteTest {
     
     @Test
     public void testSelectByNome() {
-        System.out("SelectByNome");
+        System.out.println("SelectByNome");
         CrudTeste instance = new CrudTeste();
         List<Teste> result = instance.SelectByNome("i");
         assertEquals(4, result.size());

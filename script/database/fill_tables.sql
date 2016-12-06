@@ -66,6 +66,15 @@ INSERT INTO public.agendamento(cod_agendamento, dia, mes, ano, horas, minutos, d
 INSERT INTO public.agendamento(cod_agendamento, dia, mes, ano, horas, minutos, duracao, codfk_servico) VALUES (2, 25, 10, 2016, 15, 30, 30, 2);
 INSERT INTO public.agendamento(cod_agendamento, dia, mes, ano, horas, minutos, duracao, codfk_servico) VALUES (3, 25, 10, 2016, 15, 30, 30, 3);
 
+-- Tabela clienteServico para implementacao de bonificacao
+INSERT INTO public.clienteServico(cod_clienteServico, cod_servico,cod_cliente ,quantidade) VALUES (1, 1, 1, 10); -- o cliente 1 comprou 10 serviços 1
+INSERT INTO public.clienteServico(cod_clienteServico, cod_servico,cod_cliente ,quantidade) VALUES (2, 1, 2, 20); -- o cliente 2 comprou 20 serviços 1
+INSERT INTO public.clienteServico(cod_clienteServico, cod_servico,cod_cliente ,quantidade) VALUES (3, 1, 3, 22); -- o cliente 3 comprou 22 serviços 1
+
+INSERT INTO public.clienteServico(cod_clienteServico, cod_servico,cod_cliente ,quantidade) VALUES (4, 2, 1, 10); -- o cliente 1 comprou 35 serviços 2
+INSERT INTO public.clienteServico(cod_clienteServico, cod_servico,cod_cliente ,quantidade) VALUES (5, 2, 2, 20); -- o cliente 2 comprou 31 serviços 2
+INSERT INTO public.clienteServico(cod_clienteServico, cod_servico,cod_cliente ,quantidade) VALUES (6, 2, 3, 22); -- o cliente 3 comprou 5 serviços 2
+
 
 
 

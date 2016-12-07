@@ -5,15 +5,14 @@
  */
 package br.data.entity;
 
-
-
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -25,91 +24,132 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author diegopn_pereira
+ * @author ricardo
  */
 @Entity
 @Table(name = "cliente")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c")
-    , @NamedQuery(name = "Servico.findByidCliente", query = "SELECT c FROM Cliente c WHERE s.idCliente = :idCliente")
-    , @NamedQuery(name = "Servico.findByEmail", query = "SELECT c FROM Cliente c WHERE c.email = :email")
-    , @NamedQuery(name = "Servico.findBySenha", query = "SELECT c FROM Cliente c WHERE c.senha = :senha")
-    , @NamedQuery(name = "Servico.findByNome", query = "SELECT c FROM Cliente c WHERE c.nome = :nome")})
+    , @NamedQuery(name = "Cliente.findByCodCliente", query = "SELECT c FROM Cliente c WHERE c.codCliente = :codCliente")
+    , @NamedQuery(name = "Cliente.findByTelefone", query = "SELECT c FROM Cliente c WHERE c.telefone = :telefone")
+    , @NamedQuery(name = "Cliente.findByCpf", query = "SELECT c FROM Cliente c WHERE c.cpf = :cpf")})
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "idCliente")
-    private Integer idCliente;
-    @Size(max = 250)
-    @Column(name = "email")
-    private String email;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "senha")
-    private String senha;
+    @Column(name = "cod_cliente")
+    private Integer codCliente;
     @Size(max = 100)
-    @Column(name = "nome")
-    private String nome;
+    @Column(name = "telefone")
+    private String telefone;
     @Size(max = 100)
-   
-
+    @Column(name = "cpf")
+    private String cpf;
+    @OneToMany(mappedBy = "codCliente")
+    private Collection<Clienteservico> clienteservicoCollection;
+    @JoinColumn(name = "codfk_endereco", referencedColumnName = "cod_endereco")
+    @ManyToOne
+    private Endereco codfkEndereco;
+    @JoinColumn(name = "codfk_fisica", referencedColumnName = "cod_fisica")
+    @ManyToOne
+    private Fisica codfkFisica;
+    @OneToMany(mappedBy = "codCliente")
+    private Collection<Mensagemsuporte> mensagemsuporteCollection;
+    @OneToMany(mappedBy = "codfkCliente")
+    private Collection<Servico> servicoCollection;
 
     public Cliente() {
     }
 
-    public Integer getIdCliente() {
-        return idCliente;
+    public Cliente(Integer codCliente) {
+        this.codCliente = codCliente;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public Integer getCodCliente() {
+        return codCliente;
     }
 
-    public String getEmail() {
-        return email;
+    public void setCodCliente(Integer codCliente) {
+        this.codCliente = codCliente;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public String getSenha() {
-        return senha;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public String getCpf() {
+        return cpf;
     }
 
-    public String getNome() {
-        return nome;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    @XmlTransient
+    public Collection<Clienteservico> getClienteservicoCollection() {
+        return clienteservicoCollection;
     }
 
-   
+    public void setClienteservicoCollection(Collection<Clienteservico> clienteservicoCollection) {
+        this.clienteservicoCollection = clienteservicoCollection;
+    }
+
+    public Endereco getCodfkEndereco() {
+        return codfkEndereco;
+    }
+
+    public void setCodfkEndereco(Endereco codfkEndereco) {
+        this.codfkEndereco = codfkEndereco;
+    }
+
+    public Fisica getCodfkFisica() {
+        return codfkFisica;
+    }
+
+    public void setCodfkFisica(Fisica codfkFisica) {
+        this.codfkFisica = codfkFisica;
+    }
+
+    @XmlTransient
+    public Collection<Mensagemsuporte> getMensagemsuporteCollection() {
+        return mensagemsuporteCollection;
+    }
+
+    public void setMensagemsuporteCollection(Collection<Mensagemsuporte> mensagemsuporteCollection) {
+        this.mensagemsuporteCollection = mensagemsuporteCollection;
+    }
+
+    @XmlTransient
+    public Collection<Servico> getServicoCollection() {
+        return servicoCollection;
+    }
+
+    public void setServicoCollection(Collection<Servico> servicoCollection) {
+        this.servicoCollection = servicoCollection;
+    }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idCliente != null ? idCliente.hashCode() : 0);
+        hash += (codCliente != null ? codCliente.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Servico)) {
+        if (!(object instanceof Cliente)) {
             return false;
         }
         Cliente other = (Cliente) object;
-        if ((this.idCliente == null && other.idCliente != null) || (this.idCliente != null && !this.idCliente.equals(other.idCliente))) {
+        if ((this.codCliente == null && other.codCliente != null) || (this.codCliente != null && !this.codCliente.equals(other.codCliente))) {
             return false;
         }
         return true;
@@ -117,7 +157,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "br.data.entity.Cliente[ idCliente=" + idCliente + " ]";
+        return "br.data.entity.Cliente[ codCliente=" + codCliente + " ]";
     }
     
 }

@@ -12,6 +12,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -23,7 +25,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author diegopn_pereira
+ * @author ricardo
  */
 @Entity
 @Table(name = "servico")
@@ -67,8 +69,19 @@ public class Servico implements Serializable {
     private String intervaloFornecedor;
     @Column(name = "status_negociacao")
     private Boolean statusNegociacao;
+    @OneToMany(mappedBy = "codServico")
+    private Collection<Clienteservico> clienteservicoCollection;
+    @JoinColumn(name = "codfk_categoria", referencedColumnName = "cod_categoria")
+    @ManyToOne
+    private Categoria codfkCategoria;
+    @JoinColumn(name = "codfk_cliente", referencedColumnName = "cod_cliente")
+    @ManyToOne
+    private Cliente codfkCliente;
+    @JoinColumn(name = "codfk_prestador", referencedColumnName = "cod_prestador")
+    @ManyToOne
+    private Prestador codfkPrestador;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codfkServico")
-    private Collection<Agenda> agendamentoCollection;
+    private Collection<Agendamento> agendamentoCollection;
 
     public Servico() {
     }
@@ -147,11 +160,44 @@ public class Servico implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Agenda> getAgendaCollection() {
+    public Collection<Clienteservico> getClienteservicoCollection() {
+        return clienteservicoCollection;
+    }
+
+    public void setClienteservicoCollection(Collection<Clienteservico> clienteservicoCollection) {
+        this.clienteservicoCollection = clienteservicoCollection;
+    }
+
+    public Categoria getCodfkCategoria() {
+        return codfkCategoria;
+    }
+
+    public void setCodfkCategoria(Categoria codfkCategoria) {
+        this.codfkCategoria = codfkCategoria;
+    }
+
+    public Cliente getCodfkCliente() {
+        return codfkCliente;
+    }
+
+    public void setCodfkCliente(Cliente codfkCliente) {
+        this.codfkCliente = codfkCliente;
+    }
+
+    public Prestador getCodfkPrestador() {
+        return codfkPrestador;
+    }
+
+    public void setCodfkPrestador(Prestador codfkPrestador) {
+        this.codfkPrestador = codfkPrestador;
+    }
+
+    @XmlTransient
+    public Collection<Agendamento> getAgendamentoCollection() {
         return agendamentoCollection;
     }
 
-    public void setAgendaCollection(Collection<Agenda> agendamentoCollection) {
+    public void setAgendamentoCollection(Collection<Agendamento> agendamentoCollection) {
         this.agendamentoCollection = agendamentoCollection;
     }
 

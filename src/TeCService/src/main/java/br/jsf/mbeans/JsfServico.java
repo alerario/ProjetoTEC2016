@@ -5,7 +5,7 @@
  */
 package br.jsf.mbeans;
 
-import br.data.entity.Agenda;
+import br.data.entity.Agendamento;
 import java.util.Collection;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -22,7 +22,7 @@ public class JsfServico {
     private String intervaloCliente;
     private String intervaloFornecedor;
     private Boolean statusNegociacao;
-    private Collection<Agenda> agendamentoCollection;
+    private Collection<Agendamento> agendamentoCollection;
 
     public JsfServico() {
     }
@@ -91,11 +91,11 @@ public class JsfServico {
         this.statusNegociacao = statusNegociacao;
     }
 
-    public Collection<Agenda> getAgendamentoCollection() {
+    public Collection<Agendamento> getAgendamentoCollection() {
         return agendamentoCollection;
     }
 
-    public void setAgendamentoCollection(Collection<Agenda> agendamentoCollection) {
+    public void setAgendamentoCollection(Collection<Agendamento> agendamentoCollection) {
         this.agendamentoCollection = agendamentoCollection;
     }
 
@@ -109,7 +109,7 @@ public class JsfServico {
         servico.setIntervaloCliente(intervaloCliente);
         servico.setIntervaloFornecedor(intervaloFornecedor);
         servico.setStatusNegociacao(statusNegociacao);
-        servico.setAgendaCollection(agendamentoCollection);
+        servico.setAgendamentoCollection(agendamentoCollection);
         new br.data.crud.CrudServico().persist(servico);
 
         this.codServico = 0;
@@ -140,7 +140,7 @@ public class JsfServico {
         this.intervaloCliente = servico.getIntervaloCliente();
         this.intervaloFornecedor = servico.getIntervaloFornecedor();
         this.statusNegociacao = servico.getStatusNegociacao();
-        this.agendamentoCollection = servico.getAgendaCollection();
+        this.agendamentoCollection = servico.getAgendamentoCollection();
         return "merge.xhtml";
     }
 
@@ -156,7 +156,7 @@ public class JsfServico {
         servico.setIntervaloCliente(intervaloCliente);
         servico.setIntervaloFornecedor(intervaloFornecedor);
         servico.setStatusNegociacao(statusNegociacao);
-        servico.setAgendaCollection(agendamentoCollection);
+        servico.setAgendamentoCollection(agendamentoCollection);
         
         new br.data.crud.CrudServico().merge(servico);
 

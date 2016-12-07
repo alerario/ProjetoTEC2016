@@ -13,26 +13,30 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author alexandrelerario
+ * @author ricardo
  */
 @Entity
 @Table(name = "teste")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Teste.findAll", query = "SELECT t FROM Teste t"),
-    @NamedQuery(name = "Teste.findByCodigo", query = "SELECT t FROM Teste t WHERE t.codigo = :codigo"),
-    @NamedQuery(name = "Teste.findByNome", query = "SELECT t FROM Teste t WHERE UPPER(t.nome) LIKE :nome")})
+    @NamedQuery(name = "Teste.findAll", query = "SELECT t FROM Teste t")
+    , @NamedQuery(name = "Teste.findByCodigo", query = "SELECT t FROM Teste t WHERE t.codigo = :codigo")
+    , @NamedQuery(name = "Teste.findByNome", query = "SELECT t FROM Teste t WHERE t.nome = :nome")})
 public class Teste implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
+    @NotNull
     @Column(name = "codigo")
     private Integer codigo;
+    @Size(max = 70)
     @Column(name = "nome")
     private String nome;
 

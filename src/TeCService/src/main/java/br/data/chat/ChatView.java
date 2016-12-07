@@ -1,9 +1,8 @@
 package br.data.chat;
 
  
-import com.sun.xml.internal.ws.client.RequestContext;
 import java.io.Serializable;
- import org.primefaces.push.Decoder;
+import org.primefaces.push.Decoder;
 import org.primefaces.push.EventBus;
 import org.primefaces.push.EventBusFactory;
 

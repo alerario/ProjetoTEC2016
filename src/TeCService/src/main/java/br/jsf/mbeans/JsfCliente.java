@@ -5,7 +5,7 @@
  */
 package br.jsf.mbeans;
 
-import br.data.entity.Agenda;
+import br.data.entity.Agendamento;
 import java.util.Collection;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -19,7 +19,7 @@ public class JsfCliente {
     private String senha;
     private String nome;
   
-    private Collection<Agenda> agendamentoCollection;
+    private Collection<Agendamento> agendamentoCollection;
 
     public JsfCliente() {
     }
@@ -63,10 +63,10 @@ public class JsfCliente {
 
     public void persist() {
         br.data.entity.Cliente cliente = new br.data.entity.Cliente();
-        cliente.setIdCliente(idCliente);
-        cliente.setEmail(email);
+        cliente.setCodCliente(idCliente);
+        /*cliente.setEmail(email);
         cliente.setSenha(senha);
-        cliente.setNome(nome);
+        cliente.setNome(nome);*/
         
         new br.data.crud.CrudCliente().persist(cliente);
 
@@ -87,10 +87,10 @@ public class JsfCliente {
     }
 
     public String update(br.data.entity.Cliente cliente) {
-        this.idCliente = cliente.getIdCliente();
-        this.email = cliente.getEmail();
+        this.idCliente = cliente.getCodCliente();
+        /*this.email = cliente.getEmail();
         this.senha = cliente.getSenha();
-        this.nome = cliente.getNome();
+        this.nome = cliente.getNome();*/
        
         
         return "merge.xhtml";
@@ -101,9 +101,9 @@ public class JsfCliente {
         
         cliente = new br.data.crud.CrudCliente().find(this.idCliente);
         
-        cliente.setEmail(email);
+        /*cliente.setEmail(email);
         cliente.setSenha(senha);
-        cliente.setNome(nome);
+        cliente.setNome(nome);*/
         
         
         new br.data.crud.CrudCliente().merge(cliente);

@@ -5,20 +5,20 @@
  */
 package br.data.crud;
 
-import br.data.entity.Agenda;
+import br.data.entity.Agendamento;
 import br.data.entity.Teste;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
-public class CrudAgenda extends AbstractCrud<Agenda> {
+public class CrudAgenda extends AbstractCrud<Agendamento> {
     
     private EntityManager em;
     private static final String PU = EMNames.EMN1;
 
     public CrudAgenda() {
-        super(Agenda.class);
+        super(Agendamento.class);
     }
     
     

@@ -11,28 +11,19 @@
             <h:form>
                 <h:dataTable value="#{jsfAgenda.all}" var="agenda">
                     <h:column>
-                        <h:outputText value="#{agenda.ano}" />
+                        <h:outputText value="#{agenda.dia}/#{agenda.mes}/#{agenda.ano}" />
+                    </h:column>                    
+                    <h:column>
+                        <h:outputText value="ás #{agenda.horas}h#{agenda.minutos}" />
                     </h:column>
                     <h:column>
-                        <h:outputText value="#{agenda.mes}" />
+                        <h:outputText value="com duração de #{agenda.duracao} h" />
                     </h:column>
                     <h:column>
-                        <h:outputText value="#{agenda.dia}" />
+                        <h:outputText value="haverá '#{agenda.descricao}'" />
                     </h:column>
                     <h:column>
-                        <h:outputText value="#{agenda.horas}" />
-                    </h:column>
-                    <h:column>
-                        <h:outputText value="#{agenda.minutos}" />
-                    </h:column>
-                    <h:column>
-                        <h:outputText value="#{agenda.duracao}" />
-                    </h:column>
-                    <h:column>
-                        <h:outputText value="#{agenda.descricao}" />
-                    </h:column>
-                    <h:column>
-                        <h:outputText value="#{agenda.codfkServico}" />
+                        <h:outputText value=": #{agenda.codfkServico.descricao}" />
                     </h:column>
                     <h:column>
                         <h:commandButton value="remover" action="#{jsfAgenda.remove(agenda)}" onclick="return confirm('Confirma exclusao?');"/>

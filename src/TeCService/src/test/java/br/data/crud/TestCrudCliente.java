@@ -60,7 +60,7 @@ public class TestCrudCliente {
     public List<Cliente> filtrar(List<Cliente> c, int id) {
         List<Cliente> temp = null;
         for(Cliente cli: c) {
-            if (cli.getIdCliente() == id)
+            if (cli.getCodCliente() == id)
                 temp.add(cli);
         }
         return temp;

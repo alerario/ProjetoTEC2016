@@ -34,7 +34,7 @@ public class JsfAgenda {
     public JsfAgenda() {}
 
     public void persist() {
-        br.data.entity.Agenda agenda = new br.data.entity.Agenda();
+        br.data.entity.Agendamento agenda = new br.data.entity.Agendamento();
 
         agenda.setAno(ano);
         agenda.setCodAgendamento(codAgendamento);
@@ -58,15 +58,15 @@ public class JsfAgenda {
         codfkServico = null;
     }
 
-    public void remove(br.data.entity.Agenda agenda) {
+    public void remove(br.data.entity.Agendamento agenda) {
         new br.data.crud.CrudAgenda().remove(agenda);
     }
 
-    public java.util.Collection<br.data.entity.Agenda> getAll() {
+    public java.util.Collection<br.data.entity.Agendamento> getAll() {
         return new br.data.crud.CrudAgenda().getAll();
     }
 
-    public String update(br.data.entity.Agenda agenda) {
+    public String update(br.data.entity.Agendamento agenda) {
         codAgendamento = agenda.getCodAgendamento();
         dia = agenda.getDia();
         mes = agenda.getMes();
@@ -81,7 +81,7 @@ public class JsfAgenda {
     }
 
     public void merge() {
-        br.data.entity.Agenda agenda;
+        br.data.entity.Agendamento agenda;
 
         agenda = new br.data.crud.CrudAgenda().find(this.codAgendamento);
 

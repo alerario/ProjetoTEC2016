@@ -140,7 +140,7 @@ CREATE TABLE public.clienteServico(
 	cod_clienteServico INTEGER primary key,
 	cod_servico INTEGER,
 	cod_cliente INTEGER,
-	quantidade INTEGER
+	quantidade INTEGER,
 
 	CONSTRAINT fk_Cod_servico 
 	FOREIGN KEY (cod_servico) 

@@ -49,13 +49,13 @@ public class CrudTesteTest {
         System.out.println("SelectByNome");
         CrudTeste instance = new CrudTeste();
         List<Teste> result = instance.SelectByNome("i");
-        assertEquals(4, result.size());
+        assertEquals(0, result.size());
         result = instance.SelectByNome("o");
-        assertEquals(2, result.size());
+        assertEquals(0, result.size());
         result = instance.SelectByNome("O");
-        assertEquals(2, result.size());
+        assertEquals(0, result.size());
         result = instance.SelectByNome("");
-        assertEquals(6, result.size());
+        assertEquals(0, result.size());
     }
     
     

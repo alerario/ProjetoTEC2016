@@ -148,5 +148,17 @@ CREATE TABLE public.clienteServico(
 	REFERENCES Cliente(cod_cliente) ON DELETE CASCADE
 );
 
+-- orçamento
+CREATE TABLE public.orcamento(
+	
+	cod_orcamento INTEGER primary key,
+	cod_prestador INTEGER,
+	descricao VARCHAR(1000),
+
+	CONSTRAINT fk_Cod_prestador 
+	FOREIGN KEY (cod_prestador) 
+	REFERENCES Servico(cod_prestador) ON DELETE CASCADE,
+);
+
 
 

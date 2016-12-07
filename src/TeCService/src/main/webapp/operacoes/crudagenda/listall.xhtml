@@ -23,7 +23,7 @@
                         <h:outputText value="haverá '#{agenda.descricao}'" />
                     </h:column>
                     <h:column>
-                        <h:outputText value=": #{agenda.codfkServico.descricao}" />
+                        <h:outputText value=":  #{agenda.codfkServico.descricao}" />
                     </h:column>
                     <h:column>
                         <h:commandButton value="remover" action="#{jsfAgenda.remove(agenda)}" onclick="return confirm('Confirma exclusao?');"/>

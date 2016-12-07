@@ -23,8 +23,7 @@ CREATE TABLE public.endereco(
 );
 
 -- usuario
-CREATE TABLE public.usuario
-(
+CREATE TABLE public.usuario(
   cod_usuario serial,
   login character varying(40),
   senha character varying(40),
@@ -33,15 +32,13 @@ CREATE TABLE public.usuario
 );
 
 -- analista de marketing, especialização de usuario
-CREATE TABLE public.usuarioMarketing
-(
+CREATE TABLE public.usuarioMarketing(
   cod_usuarioMarketing INTEGER NOT NULL,
   login character varying(40),
   senha character varying(40),
   email character varying(100),
   CONSTRAINT usuarioMarketing_pkey PRIMARY KEY (cod_usuarioMarketing)
- 
-  );
+);
 
 -- pessoa física -- criar como heranca de usuario
 create table public.fisica(
@@ -119,8 +116,8 @@ CREATE TABLE public.agendamento(
 CREATE TABLE public.mensagemsuporte(
 	cod_mensagem integer primary key,
 	assunto_mensagem varchar(100),
-	resposta_mensagem varchar (1000),
-	pergunta_mensagem varchar (1000),
+	resposta_mensagem varchar(1000),
+	pergunta_mensagem varchar(1000),
 
 	cod_prestador INTEGER,
 	cod_cliente INTEGER,

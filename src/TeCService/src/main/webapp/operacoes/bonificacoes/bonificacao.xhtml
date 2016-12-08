@@ -19,20 +19,16 @@ and open the template in the editor.
 
                 <h:panelGrid columns="2" style="margin-bottom:5px" cellpadding="5" columnClasses="label, value">
                     <p:outputLabel for="console" value="Cliente:" />
-                    <p:selectOneMenu id="console" value="#{jsfCliente.getAll()}" style="width:200px">
-                        <f:selectItem itemLabel="Cliente 1 " itemValue="1" />
-                        <f:selectItem itemLabel="Cliente 2 " itemValue="2" />
-                        <f:selectItem itemLabel="Cliente 3 " itemValue="3" />  
+                    <p:selectOneMenu id="console" value="#{jsfCliente.getAll()}" var="cliente" style="width:200px">
+                        <f:selectItem itemLabel="Cliente #{cliente.codCliente}" itemValue="#{cliente.codCliente}" />
                     </p:selectOneMenu>
                 </h:panelGrid>
                 <br></br>
 
                 <h:panelGrid columns="2" style="margin-bottom:5px" cellpadding="5" columnClasses="label, value">
                     <p:outputLabel for="console" value="Serviço:" />
-                    <p:selectOneMenu id="console2" value="" style="width:200px">
-                        <f:selectItem itemLabel="Serviço 1 " itemValue="1" />
-                        <f:selectItem itemLabel="Serviço 2 " itemValue="2" />
-                        <f:selectItem itemLabel="Serviço 3 " itemValue="3" />  
+                    <p:selectOneMenu id="console2" value="#{jsfServico.getAll()}" var="servico" style="width:200px">
+                        <f:selectItem itemLabel="Serviço #{servico.codServico} " itemValue="#{servico.codServico}" />
                     </p:selectOneMenu>
                 </h:panelGrid>
                 

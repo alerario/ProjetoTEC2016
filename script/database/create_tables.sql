@@ -160,5 +160,21 @@ CREATE TABLE public.orcamento(
 	REFERENCES Servico(cod_prestador) ON DELETE CASCADE,
 );
 
+-- site_empresa
+CREATE TABLE public.site_empresa(
+	
+	cod_servico INTEGER primary key,
+	cod_prestador INTEGER primary key,
+
+	CONSTRAINT fk_Cod_servico 
+	FOREIGN KEY (cod_servico) 
+	REFERENCES Servico(cod_servico) ON DELETE CASCADE,
+	
+	CONSTRAINT fk_Cod_prestador 
+	FOREIGN KEY (cod_prestador) 
+	REFERENCES Servico(cod_prestador) ON DELETE CASCADE,
+);
+
+
 
 

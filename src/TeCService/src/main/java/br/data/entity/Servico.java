@@ -223,7 +223,7 @@ public class Servico implements Serializable {
 
     @Override
     public String toString() {
-        return "br.data.entity.Servico[ codServico=" + codServico + " ]";
+        return this.getDescricao();
     }
     
 }

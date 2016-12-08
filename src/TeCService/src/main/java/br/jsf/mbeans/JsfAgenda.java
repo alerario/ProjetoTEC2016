@@ -33,7 +33,7 @@ public class JsfAgenda {
 
     public JsfAgenda() {}
 
-    public void persist() {
+    public String persist() {
         br.data.entity.Agendamento agenda = new br.data.entity.Agendamento();
 
         agenda.setAno(ano);
@@ -56,6 +56,8 @@ public class JsfAgenda {
         duracao = "";
         descricao = "";
         codfkServico = null;
+        
+        return "listall.xhtml";
     }
 
     public void remove(br.data.entity.Agendamento agenda) {

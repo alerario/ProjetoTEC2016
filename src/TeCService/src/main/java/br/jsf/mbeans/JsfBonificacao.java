@@ -7,6 +7,7 @@ package br.jsf.mbeans;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.persistence.NamedQuery;
 
 /**
  *
@@ -15,5 +16,26 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class JsfBonificacao {
+   
+    public int quantidadeCompra;
+    public int quantidadeBonificacao;
+    
+    public int buscaValores(int cliente, int servico){
+        
+        quantidadeCompra = 10;
+        return quantidadeCompra;
+        
+    }
+    
+    public int valorBonificacao(){
+        if (quantidadeCompra >= 10){
+            return quantidadeBonificacao = 10;
+        } else if (quantidadeCompra >= 20){
+            return quantidadeBonificacao = 20;
+        }else {
+            return 0;
+        }
+        
+    }
     
 }

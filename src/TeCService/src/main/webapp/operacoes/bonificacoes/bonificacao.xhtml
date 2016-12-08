@@ -32,16 +32,16 @@ and open the template in the editor.
                     </p:selectOneMenu>
                 </h:panelGrid>
                 
-                <p:commandButton value="Pesquisar" oncomplete="PF('dlg').show()" style="position:absolute; left: 400px;" />
+                <p:commandButton value="Pesquisar" action="#{jsfBonificacao.buscaValores(cliente.codCliente,servico.codServico)}" oncomplete="PF('dlg').show()" style="position:absolute; left: 400px;" />
 
                 <p:dialog header="Bonificação" modal="true" showEffect="bounce" widgetVar="dlg" resizable="false">
                     <p:panelGrid columns="2" id="popupValores" columnClasses="label,value">
                         <h:outputText value="Total de Compras:" />
-                        <h:outputText value="10" />
+                        <h:outputText value="#{jsfBonificacao.buscaValores(cliente.codCliente,servico.codServico)}" />
                         <h:outputText value="Bonificação de:" />
-                        <h:outputText value="10%" />
+                        <h:outputText value="#{jsfBonificacao.valorBonificacao()}%" />
                         <h:outputText value="Codigo de Bonus" />
-                        <h:outputText value="cod_usuario10" />
+                        <h:outputText value="#{cliente.codCliente}/#{jsfBonificacao.valorBonificacao()}" />
                     </p:panelGrid>
                 </p:dialog>
             </h:form>

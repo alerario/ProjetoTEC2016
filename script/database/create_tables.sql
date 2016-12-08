@@ -38,7 +38,7 @@ CREATE TABLE public.usuarioMarketing(
   senha character varying(40),
   email character varying(100),
   CONSTRAINT usuarioMarketing_pkey PRIMARY KEY (cod_usuarioMarketing)
-) INHERITS (cities);
+) INHERITS (usuario);
 
 -- pessoa física -- criar como heranca de usuario
 create table public.fisica(

@@ -11,4 +11,5 @@ package br.data.crud;
  */
 public class EMNames {
     public static final String EMN1 = "tsPU";
+ //comentario novo
 }

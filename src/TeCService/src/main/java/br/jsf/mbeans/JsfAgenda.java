@@ -181,6 +181,6 @@ public class JsfAgenda {
         this.codfkServico = codfkServico;
     }
 
-    
+    //modificacao aula ger. configuracoes
 
 }
